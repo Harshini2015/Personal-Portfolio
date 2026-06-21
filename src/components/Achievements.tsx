@@ -53,10 +53,10 @@ export function Achievements() {
               damping: 15,
               delay: idx * 0.1,
             }}
-            whileHover={{ y: -8, scale: 1.02 }}
+            whileHover={{ y: -4, scale: 1.008 }}
             className="flex h-full w-full"
           >
-            <SpotlightCard className="p-8 sm:p-10 flex flex-col justify-between w-full border border-slate-100/80 hover:border-violet-200/50 hover:shadow-2xl transition-all duration-500">
+            <SpotlightCard className="p-8 sm:p-10 flex flex-col justify-between w-full border border-slate-200/50 hover:border-violet-200/40 hover:shadow-[0_20px_50px_rgba(139,92,246,0.06)] transition-all duration-700">
               <div className="flex gap-6 items-start">
                 <div className="p-4 rounded-2xl bg-violet-50 border border-violet-100/50 text-violet-600 shrink-0">
                   {item.icon}

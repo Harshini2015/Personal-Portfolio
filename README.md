@@ -1,54 +1,29 @@
 # Live Demo
 
-🚀 Production Website:
-
+Production Website:
 https://personal-portfolio-kappa-dusky.vercel.app/
 
----
-
-# Repository
-
 GitHub Repository:
-
 https://github.com/Harshini2015/Personal-Portfolio
-
----
-
-# Quick Links
-
-* Live Website: https://personal-portfolio-kappa-dusky.vercel.app/
-* GitHub Repository: https://github.com/Harshini2015/Personal-Portfolio
-* LinkedIn: https://linkedin.com/in/harshini-s-8400372bb
-* LeetCode: https://leetcode.com/u/harshini1322/
 
 ---
 
 # Harshini S — Portfolio Website
 
-A personal portfolio and project showcase website built with Next.js 15, React 19, Tailwind CSS v4, Framer Motion, and Lucide React.
+A personal portfolio and project showcase website built with Next.js 15, React 19, Tailwind CSS v4, Framer Motion, and Lucide React. Designed as a luxury personal brand experience with fluid liquid-glass interactions, soft spring physics, and cursor spotlight sheens.
 
 ---
 
-## 🚀 Tech Stack
+## 🚀 Features & Motion Experience
 
-* **Core Framework**: [Next.js 15 (App Router)](https://nextjs.org/)
-* **Runtime**: [React 19](https://react.dev/)
-* **Programming Language**: [TypeScript](https://www.typescriptlang.org/)
-* **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
-* **Motion Design**: [Framer Motion](https://www.framer.com/motion/)
-* **Iconography**: [Lucide React](https://lucide.dev/)
-* **Deployment**: [Vercel](https://vercel.com/)
-
----
-
-## ✨ Design Elements & Features
-
-* **Premium Light Theme**: Clean `#FAF9F6` backdrop with soft Slate interfaces, pure white card panels (`#FFFFFF`), and violet accents (`#8B5CF6`).
-* **Recruiter-Friendly Layout**: Clean, modern single-page structure designed for quick scanning and professional readability.
-* **Premium Typography**: Combination of modern geometric sans-serif font (`Plus Jakarta Sans`) and editorial serif (`Playfair Display`).
-* **Layered Glassmorphism**: Interactive cards utilizing light blur filters, soft borders, and hover elevation shadows.
-* **Responsive Layouts**: Designed to be responsive and visually appealing across all device viewports.
-* **Contact Information**: Embedded channels for LinkedIn, GitHub, LeetCode, Direct Phone, and Digital Mailbox.
+* **Liquid Glass Interactions**: Soft, organic hover feedback on cards that react like a surface tension field rather than basic cartoon scales.
+* **Water-like Popping Effects**: Custom Framer Motion states utilizing low-damping spring ratios to establish soft, premium fluid motion.
+* **Magnetic Buttons & Social Links**: Interactive anchors pull slightly towards the mouse coordinate, creating an immersive, high-end feel.
+* **Light Premium Theme**: Designed on a pristine `#FAF9F6` canvas with soft glass surfaces, subtle shadows, and responsive layouts.
+* **Dynamic Projects Showcase**:
+  * *Enterprise Email Intelligence*: Prominent GitHub Repository redirect to `SecureMail` marked with "View Repository".
+  * *DermIQ*: Displays description of deep learning acne/dermatological severity assistant with repository links completely omitted.
+  * *Smart Loan*: Full-stack simulation testing suite including both active code link and live deployment link.
 
 ---
 
@@ -61,23 +36,24 @@ A personal portfolio and project showcase website built with Next.js 15, React 1
 │   └── sitemap.xml           # Static search index directory
 ├── src/
 │   ├── app/
-│   │   ├── globals.css       # Core design tokens, grid patterns, scrollbars
-│   │   ├── layout.tsx        # Metadata config, serif/sans fonts, and root page
-│   │   └── page.tsx          # Dynamic navigation shell and sections flow
+│   │   ├── globals.css       # Liquid glass sheens, grid overlays, scrollbars
+│   │   ├── layout.tsx        # Metadata configs, playfair & jakarta typography
+│   │   └── page.tsx          # Dynamic active navigation tracker and layout section flow
 │   ├── components/
 │   │   ├── ui/
-│   │   │   ├── background-blobs.tsx  # Floating gradient light fields
-│   │   │   └── magnetic.tsx          # Magnetic button hover wrapper
-│   │   ├── Hero.tsx          # Clean profile showcase and core headline
-│   │   ├── About.tsx         # About Me: Core philosophy
-│   │   ├── Education.tsx     # Education: Timeline of academic history
-│   │   ├── Skills.tsx        # Skills: Matrix grid of capabilities
-│   │   ├── Experience.tsx    # Experience: Cybersecurity analyst details
-│   │   ├── Projects.tsx      # Projects: Work showcases and direct links
-│   │   ├── Achievements.tsx  # Achievements: Milestones and hackathon results
-│   │   └── Contact.tsx       # Contact: Secure message form and channels
+│   │   │   ├── background-blobs.tsx  # Ambient floating gradient backdrops
+│   │   │   ├── magnetic.tsx          # Magnetic button layout wrapper
+│   │   │   └── spotlight.tsx         # Liquid cursor glow card container
+│   │   ├── Hero.tsx          # Clean floating picture frame and brand title
+│   │   ├── About.tsx         # Mission principles and floating stack
+│   │   ├── Education.tsx     # Timelines of academic milestones
+│   │   ├── Skills.tsx        # Responsive matrices of capabilities with fluid bounces
+│   │   ├── Experience.tsx    # Professional cybersecurity analysis outputs
+│   │   ├── Projects.tsx      # Multi-interactive glassworks projects grid
+│   │   ├── Achievements.tsx  # Competitive hackathons and project awards
+│   │   └── Contact.tsx       # Message inputs and magnetic socials
 │   └── lib/
-│       └── utils.ts          # Class merging utility (cn)
+│       └── utils.ts          # Styles utility merger
 ```
 
 ---
@@ -107,26 +83,23 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 Compile the project to verify TypeScript syntax and Next.js static asset optimizations:
 ```bash
 npm run build
-``` 
+```
 
 ---
 
-## 📦 Deployment
+## 📦 Deployment & Vercel Configuration
 
-This portfolio is deployed on Vercel.
-
-Production URL:
-
-https://personal-portfolio-kappa-dusky.vercel.app/
-
-Deployment Workflow:
+The website is configured for automated deployments on Vercel linked directly to the `main` branch.
 
 ```text
-GitHub (main branch)
-       ↓
-Vercel Automatic Deployment
-       ↓
-Production Website
+Commit and push to 'main'
+        ↓
+Vercel Webhook Triggers Build
+        ↓
+TypeScript & Lint Validation
+        ↓
+Optimized Production Bundle Deployment
 ```
 
-Whenever code is pushed to the main branch, Vercel automatically builds and deploys the latest version.
+Every push to the `main` branch immediately schedules an production build on Vercel. Production URL:
+https://personal-portfolio-kappa-dusky.vercel.app/

@@ -12,13 +12,14 @@ export function Projects() {
       techStack: ["Python", "TensorFlow", "Secure SMTP", "NLP"],
       description: "An intelligent security system assessing incoming email headers and message vectors for phishing heuristics, generating dynamic risk indexes and threat reports.",
       github: "https://github.com/Harshini2015/SecureMail",
+      githubLabel: "View Repository",
       live: null,
     },
     {
       name: "DermIQ",
       techStack: ["Python", "TensorFlow", "Keras", "Gradio"],
-      description: "Applied deep learning convolutional neural network models to assess skin lesions and classify risk metrics, encapsulated in an interactive diagnostic portal.",
-      github: "https://github.com/Harshini2015/DermIQ",
+      description: "AI-powered dermatological screening platform that analyzes skin images and assists with acne severity assessment.",
+      github: null,
       live: null,
     },
     {
@@ -26,6 +27,7 @@ export function Projects() {
       techStack: ["MongoDB", "Express.js", "React.js", "Node.js"],
       description: "A complete portfolio stress-testing platform evaluating debt ratios and interest variables under high-inflation simulated vectors.",
       github: "https://github.com/Harshini2015",
+      githubLabel: "Repository",
       live: "https://smart-loan-debt-analyzer.vercel.app",
     },
   ];
@@ -58,14 +60,14 @@ export function Projects() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{
               type: "spring",
-              stiffness: 70,
-              damping: 15,
+              stiffness: 80,
+              damping: 18,
               delay: idx * 0.1,
             }}
-            whileHover={{ y: -8, scale: 1.02 }}
+            whileHover={{ y: -6, scale: 1.01 }}
             className="h-full flex text-left"
           >
-            <SpotlightCard className="p-8 flex flex-col justify-between h-full w-full border border-slate-100/80 hover:border-violet-200/50 hover:shadow-2xl transition-all duration-500">
+            <SpotlightCard className="p-8 flex flex-col justify-between h-full w-full border border-slate-200/50 hover:border-violet-200/40 hover:shadow-[0_20px_50px_rgba(139,92,246,0.06)] transition-all duration-700">
               <div className="flex flex-col h-full justify-between">
                 <div>
                   {/* Title */}
@@ -93,22 +95,24 @@ export function Projects() {
 
                 {/* Action Buttons */}
                 <div className="flex items-center gap-3 pt-4 border-t border-slate-100/60">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full border border-slate-200 text-slate-700 text-xs font-bold hover:bg-slate-50 hover:border-violet-200 transition-all duration-300 glossy-btn hover:scale-105 transform active:scale-95 shadow-sm"
-                  >
-                    <Github className="w-3.5 h-3.5 text-slate-600" />
-                    <span>Repository</span>
-                  </a>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full border border-slate-200 text-slate-700 text-xs font-bold hover:bg-slate-50 hover:border-violet-200 transition-all duration-300 glossy-btn hover:scale-102 transform active:scale-98 shadow-sm"
+                    >
+                      <Github className="w-3.5 h-3.5 text-slate-600" />
+                      <span>{project.githubLabel}</span>
+                    </a>
+                  )}
 
                   {project.live && (
                     <a
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-violet-600 text-white text-xs font-bold hover:shadow-[0_4px_15px_rgba(139,92,246,0.3)] transition-all duration-300 glossy-btn hover:scale-105 transform active:scale-95"
+                      className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-violet-600 text-white text-xs font-bold hover:shadow-[0_4px_15px_rgba(139,92,246,0.25)] transition-all duration-300 glossy-btn hover:scale-102 transform active:scale-98"
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
                       <span>Live Demo</span>

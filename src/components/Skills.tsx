@@ -105,13 +105,13 @@ export function Skills() {
             key={idx}
             variants={cardVariants}
             whileHover={{ 
-              y: -5,
-              scale: 1.015,
-              transition: { type: "spring", stiffness: 300, damping: 10 }
+              y: -3,
+              scale: 1.008,
+              transition: { type: "spring", stiffness: 120, damping: 25 }
             }}
             className={`${cat.span} text-left`}
           >
-            <SpotlightCard className="p-8 h-full flex flex-col justify-between border border-slate-100/80 hover:border-violet-200/50">
+            <SpotlightCard className="p-8 h-full flex flex-col justify-between border border-slate-200/50 hover:border-violet-200/40">
               <div className="space-y-6">
                 {/* Title & Icon */}
                 <div className="flex items-center gap-3">
@@ -129,9 +129,9 @@ export function Skills() {
                     <motion.span
                       key={sIdx}
                       whileHover={{ 
-                        scale: 1.1, 
-                        y: -2,
-                        transition: { type: "spring", stiffness: 400, damping: 10 } 
+                        scale: 1.05, 
+                        y: -1.5,
+                        transition: { type: "spring", stiffness: 180, damping: 22 } 
                       }}
                       className="px-4 py-2 text-xs font-bold rounded-xl bg-slate-100/70 border border-slate-200/50 text-slate-700 select-none shadow-sm hover:border-violet-300 hover:text-violet-700 transition-all duration-300 cursor-pointer"
                     >

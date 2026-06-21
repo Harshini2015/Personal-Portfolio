@@ -72,7 +72,7 @@ export function Hero() {
             <Magnetic>
               <a
                 href="#projects"
-                className="flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-violet-600 text-white font-extrabold shadow-md hover:shadow-[0_8px_25px_rgba(139,92,246,0.35)] transition-all duration-300 group text-sm glossy-btn hover:scale-105 transform active:scale-95"
+                className="flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-violet-600 text-white font-extrabold shadow-[0_8px_30px_rgba(139,92,246,0.15)] hover:shadow-[0_12px_40px_rgba(139,92,246,0.3)] transition-all duration-500 group text-sm glossy-btn transform active:scale-98"
               >
                 <span>View Projects</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -82,7 +82,7 @@ export function Hero() {
             <Magnetic>
               <a
                 href="#contact"
-                className="flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white border border-slate-200 text-slate-700 font-bold hover:bg-slate-50 transition-all duration-300 text-sm shadow-sm glossy-btn hover:scale-105 transform active:scale-95"
+                className="flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white/70 backdrop-blur-md border border-slate-200/50 text-slate-700 font-bold hover:bg-white transition-all duration-500 text-sm shadow-sm glossy-btn transform active:scale-98"
               >
                 <Terminal className="w-4 h-4 text-violet-500" />
                 <span>Contact Me</span>
@@ -97,30 +97,34 @@ export function Hero() {
           className="lg:col-span-5 flex justify-center relative"
         >
           {/* Dynamic Glow Field */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-violet-200/30 blur-[100px] pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-85 h-85 rounded-full bg-violet-200/25 blur-[120px] pointer-events-none" />
 
           {/* Clean Profile Card */}
           <motion.div
             animate={{
-              y: [0, -12, 0],
-              rotate: [0, 1, 0, -1, 0],
+              y: [0, -8, 0],
+              borderRadius: ["2.5rem", "2.8rem", "2.4rem", "2.5rem"],
             }}
             transition={{
-              duration: 5,
+              duration: 8,
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            whileHover={{ scale: 1.05, rotate: 0 }}
-            className="relative p-3 rounded-[2.5rem] bg-white/80 backdrop-blur-md border border-white/50 shadow-[0_20px_50px_rgba(139,92,246,0.1)] glossy-glow cursor-pointer"
+            whileHover={{ 
+              scale: 1.03,
+              rotate: -0.5,
+              transition: { type: "spring", stiffness: 120, damping: 25 }
+            }}
+            className="relative p-3 rounded-[2.5rem] bg-white/70 backdrop-blur-xl border border-white/60 shadow-[0_15px_45px_rgba(139,92,246,0.06)] cursor-pointer"
           >
-            <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-[2rem] overflow-hidden border border-slate-100 bg-slate-50">
+            <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-[2rem] overflow-hidden border border-white bg-slate-50">
               <Image
                 src="/profile.jpg"
                 alt="Harshini S"
                 fill
                 priority
                 sizes="(max-width: 768px) 288px, 320px"
-                className="object-cover scale-[1.02] transition-transform duration-700 hover:scale-108"
+                className="object-cover scale-[1.02] transition-transform duration-1000 hover:scale-105"
               />
             </div>
           </motion.div>
