@@ -23,8 +23,6 @@ A personal portfolio and project showcase website built with Next.js 15, React 1
 * **High-Contrast Editorial Typography**: Combination of modern geometric tech font (`Plus Jakarta Sans`) and classic serif italics (`Playfair Display`).
 * **Layered Glassmorphism**: Interactive cards utilizing dark backdrop-filter overlays, micro-borders, and hover glow transitions.
 * **Interactive Terminal Previews**: Live mock terminal shells displaying active code and analysis snippets for ML and security systems.
-* **Zero Stock Imagery**: Relies entirely on the official user profile image (`public/profile.jpg`) and computed graphic states.
-* **Vercel Build Ready**: Built and validated for static generation, zero lints, and clean build checks.
 
 ---
 
