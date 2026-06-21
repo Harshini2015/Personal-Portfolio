@@ -1,8 +1,6 @@
-# Harshini S — Architectural Security & Machine Learning Personal Brand
+# Harshini S — Portfolio Website
 
-A luxury, production-ready personal brand and systems showcase designed for **Harshini S**. Inspired by high-end technology launch pages (such as Apple, Stripe, and Vercel), this website is built with Next.js 15, React 19, Tailwind CSS v4, Framer Motion, and Lucide React.
-
-It is structured as a storytelling product-launch experience where components flow sequentially with premium animations, depth layers, coordinate parameters, and high-performance layouts.
+A personal portfolio and project showcase website built with Next.js 15, React 19, Tailwind CSS v4, Framer Motion, and Lucide React.
 
 ---
 
@@ -25,8 +23,6 @@ It is structured as a storytelling product-launch experience where components fl
 * **High-Contrast Editorial Typography**: Combination of modern geometric tech font (`Plus Jakarta Sans`) and classic serif italics (`Playfair Display`).
 * **Layered Glassmorphism**: Interactive cards utilizing dark backdrop-filter overlays, micro-borders, and hover glow transitions.
 * **Interactive Terminal Previews**: Live mock terminal shells displaying active code and analysis snippets for ML and security systems.
-* **Zero Stock Imagery**: Relies entirely on the official user profile image (`public/profile.jpg`) and computed graphic states.
-* **Vercel Build Ready**: Built and validated for static generation, zero lints, and clean build checks.
 
 ---
 
@@ -85,24 +81,6 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 Compile the project to verify TypeScript syntax and Next.js static asset optimizations:
 ```bash
 npm run build
-```
+``` 
 
 ---
-
-## ☁️ Vercel Deployment
-
-This repository is optimized for instant Vercel deployment:
-1. Connect your GitHub repository to [Vercel](https://vercel.com).
-2. Vercel automatically detects Next.js configurations.
-3. Every push to the `main` branch immediately triggers a clean build and deployment update.
-
----
-
-## ✉️ Coordination Details
-
-* **Email**: [harshiniis2005@gmail.com](mailto:harshiniis2005@gmail.com)
-* **LinkedIn**: [Harshini S on LinkedIn](https://linkedin.com/in/harshini-s-8400372bb)
-* **GitHub**: [Harshini2015 on GitHub](https://github.com/Harshini2015)
-* **LeetCode**: [Harshini S on LeetCode](https://leetcode.com/u/harshini1322/)
-* **Phone**: +91 9632144205
-* **Location**: Chamarajanagar, Karnataka
