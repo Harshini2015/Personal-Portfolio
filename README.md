@@ -104,5 +104,4 @@ This repository is optimized for instant Vercel deployment:
 * **LinkedIn**: [Harshini S on LinkedIn](https://linkedin.com/in/harshini-s-8400372bb)
 * **GitHub**: [Harshini2015 on GitHub](https://github.com/Harshini2015)
 * **LeetCode**: [Harshini S on LeetCode](https://leetcode.com/u/harshini1322/)
-* **Phone**: +91 9632144205
 * **Location**: Chamarajanagar, Karnataka
