@@ -83,6 +83,6 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 Compile the project to verify TypeScript syntax and Next.js static asset optimizations:
 ```bash
 npm run build
-```
+``` 
 
 ---
