@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Trophy, Code2 } from "lucide-react";
+import { SpotlightCard } from "./ui/spotlight";
 
 export function Achievements() {
   const achievements = [
@@ -52,24 +53,27 @@ export function Achievements() {
               damping: 15,
               delay: idx * 0.1,
             }}
-            className="glass-card rounded-[2rem] p-8 sm:p-10 flex flex-col justify-between"
+            whileHover={{ y: -8, scale: 1.02 }}
+            className="flex h-full w-full"
           >
-            <div className="flex gap-6 items-start">
-              <div className="p-4 rounded-2xl bg-violet-50 border border-violet-100/50 text-violet-600 shrink-0">
-                {item.icon}
+            <SpotlightCard className="p-8 sm:p-10 flex flex-col justify-between w-full border border-slate-100/80 hover:border-violet-200/50 hover:shadow-2xl transition-all duration-500">
+              <div className="flex gap-6 items-start">
+                <div className="p-4 rounded-2xl bg-violet-50 border border-violet-100/50 text-violet-600 shrink-0">
+                  {item.icon}
+                </div>
+                <div className="space-y-3">
+                  <span className="text-[10px] font-extrabold text-violet-600 uppercase tracking-widest">
+                    {item.organization}
+                  </span>
+                  <h3 className="text-xl font-extrabold text-slate-900 tracking-tight">
+                    {item.title}
+                  </h3>
+                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
+                    {item.description}
+                  </p>
+                </div>
               </div>
-              <div className="space-y-3">
-                <span className="text-[10px] font-extrabold text-violet-600 uppercase tracking-widest">
-                  {item.organization}
-                </span>
-                <h3 className="text-xl font-extrabold text-slate-900 tracking-tight">
-                  {item.title}
-                </h3>
-                <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
-            </div>
+            </SpotlightCard>
           </motion.div>
         ))}
       </div>

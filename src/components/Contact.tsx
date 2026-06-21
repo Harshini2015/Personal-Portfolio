@@ -144,9 +144,12 @@ export function Contact() {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.05 }}
+                      whileHover={{ 
+                        scale: 1.15,
+                        boxShadow: "0 0 20px rgba(139, 92, 246, 0.4)",
+                      }}
                       whileTap={{ scale: 0.95 }}
-                      className="p-4 rounded-full bg-slate-100 border border-slate-200 text-slate-600 hover:text-violet-600 hover:border-violet-200 hover:bg-violet-50 shadow-sm transition-all duration-300"
+                      className="p-4 rounded-full bg-white border border-slate-200 text-slate-600 hover:text-violet-600 hover:border-violet-300 hover:bg-violet-50/50 shadow-sm transition-all duration-300 glossy-btn"
                       title={social.name}
                     >
                       {social.icon}
@@ -237,7 +240,7 @@ export function Contact() {
                     <button
                       type="submit"
                       disabled={isSubmitting || isSubmitted}
-                      className="inline-flex items-center justify-center gap-3 px-8 py-4 w-full sm:w-auto rounded-full bg-violet-600 text-white font-extrabold shadow-md hover:bg-violet-700 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-300 group text-sm"
+                      className="inline-flex items-center justify-center gap-3 px-8 py-4 w-full sm:w-auto rounded-full bg-violet-600 text-white font-extrabold shadow-md hover:shadow-[0_8px_25px_rgba(139,92,246,0.35)] disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-300 group text-sm glossy-btn hover:scale-105 transform active:scale-95"
                     >
                       <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
                       <Send className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 text-white group-hover:text-white" />

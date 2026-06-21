@@ -61,7 +61,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative min-h-screen selection:bg-violet-100 selection:text-violet-900 bg-background text-foreground overflow-clip">
+    <main className="relative min-h-screen selection:bg-violet-100 selection:text-violet-900 bg-background text-foreground overflow-clip animated-bg-gradient">
       {/* Ambient Grid Overlay & Blobs */}
       <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none z-0" />
       <BackgroundBlobs />
@@ -74,8 +74,8 @@ export default function Home() {
 
       {/* Floating Centered Glass Navigation Header */}
       <header className="fixed top-6 left-0 right-0 z-40 px-4">
-        <div className="max-w-4xl mx-auto rounded-full glass border border-slate-100 shadow-[0_8px_32px_rgba(139,92,246,0.06)] px-6 py-3 flex items-center justify-between">
-          <a href="#" className="text-sm font-extrabold tracking-tight text-slate-900 hover:text-accent transition-colors duration-300">
+        <div className="max-w-4xl mx-auto rounded-full glass border border-white/50 shadow-[0_8px_32px_rgba(139,92,246,0.08)] px-6 py-3 flex items-center justify-between">
+          <a href="#" className="text-sm font-extrabold tracking-tight text-slate-900 hover:text-accent hover:scale-105 transform transition-all duration-300">
             HARSHINI S.
           </a>
 
@@ -85,9 +85,9 @@ export default function Home() {
               <a
                 key={idx}
                 href={item.href}
-                className={`relative px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 ${
+                className={`relative px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 hover:scale-105 ${
                   activeSection === item.href.replace("#", "")
-                    ? "text-accent bg-accent/8"
+                    ? "text-accent bg-accent/8 font-extrabold"
                     : "text-slate-600 hover:text-slate-900"
                 }`}
               >
@@ -101,7 +101,7 @@ export default function Home() {
             <Magnetic>
               <a
                 href="#contact"
-                className="px-5 py-2 rounded-full bg-accent text-white text-xs font-extrabold shadow-[0_4px_20px_rgba(139,92,246,0.2)] hover:bg-violet-700 hover:shadow-[0_4px_25px_rgba(139,92,246,0.3)] transition-all duration-300"
+                className="px-5 py-2.5 rounded-full bg-accent text-white text-xs font-extrabold shadow-[0_4px_20px_rgba(139,92,246,0.25)] hover:shadow-[0_4px_25px_rgba(139,92,246,0.4)] transition-all duration-300 glossy-btn hover:scale-105 transform inline-block"
               >
                 Connect
               </a>

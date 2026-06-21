@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
+import { SpotlightCard } from "./ui/spotlight";
 
 export function Projects() {
   const projectsData = [
@@ -10,14 +11,14 @@ export function Projects() {
       name: "Enterprise Email Intelligence & Phishing Risk Analysis System",
       techStack: ["Python", "TensorFlow", "Secure SMTP", "NLP"],
       description: "An intelligent security system assessing incoming email headers and message vectors for phishing heuristics, generating dynamic risk indexes and threat reports.",
-      github: "https://github.com/Harshini2015",
+      github: "https://github.com/Harshini2015/SecureMail",
       live: null,
     },
     {
       name: "DermIQ",
       techStack: ["Python", "TensorFlow", "Keras", "Gradio"],
       description: "Applied deep learning convolutional neural network models to assess skin lesions and classify risk metrics, encapsulated in an interactive diagnostic portal.",
-      github: "https://github.com/Harshini2015",
+      github: "https://github.com/Harshini2015/DermIQ",
       live: null,
     },
     {
@@ -61,56 +62,61 @@ export function Projects() {
               damping: 15,
               delay: idx * 0.1,
             }}
-            className="glass-card rounded-[2rem] p-8 flex flex-col justify-between h-full border border-slate-100 hover:border-violet-100/50 hover:shadow-lg transition-all duration-300 text-left"
+            whileHover={{ y: -8, scale: 1.02 }}
+            className="h-full flex text-left"
           >
-            <div>
-              {/* Title */}
-              <h3 className="text-xl font-extrabold text-slate-900 tracking-tight mb-3">
-                {project.name}
-              </h3>
+            <SpotlightCard className="p-8 flex flex-col justify-between h-full w-full border border-slate-100/80 hover:border-violet-200/50 hover:shadow-2xl transition-all duration-500">
+              <div className="flex flex-col h-full justify-between">
+                <div>
+                  {/* Title */}
+                  <h3 className="text-xl font-extrabold text-slate-900 tracking-tight mb-3 line-clamp-2 min-h-[3.5rem]">
+                    {project.name}
+                  </h3>
 
-              {/* Description */}
-              <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                {project.description}
-              </p>
+                  {/* Description */}
+                  <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                    {project.description}
+                  </p>
 
-              {/* Tech Badges */}
-              <div className="flex flex-wrap gap-1.5 mb-6">
-                {project.techStack.map((tech, tIdx) => (
-                  <span
-                    key={tIdx}
-                    className="px-3 py-1 text-[11px] font-bold rounded-lg bg-slate-100/80 text-slate-600 border border-slate-200/20"
+                  {/* Tech Badges */}
+                  <div className="flex flex-wrap gap-1.5 mb-6">
+                    {project.techStack.map((tech, tIdx) => (
+                      <span
+                        key={tIdx}
+                        className="px-3 py-1 text-[11px] font-bold rounded-lg bg-slate-100/60 text-slate-600 border border-slate-200/20"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex items-center gap-3 pt-4 border-t border-slate-100/60">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full border border-slate-200 text-slate-700 text-xs font-bold hover:bg-slate-50 hover:border-violet-200 transition-all duration-300 glossy-btn hover:scale-105 transform active:scale-95 shadow-sm"
                   >
-                    {tech}
-                  </span>
-                ))}
+                    <Github className="w-3.5 h-3.5 text-slate-600" />
+                    <span>Repository</span>
+                  </a>
+
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-violet-600 text-white text-xs font-bold hover:shadow-[0_4px_15px_rgba(139,92,246,0.3)] transition-all duration-300 glossy-btn hover:scale-105 transform active:scale-95"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" />
+                      <span>Live Demo</span>
+                    </a>
+                  )}
+                </div>
               </div>
-            </div>
-
-            {/* Action Buttons */}
-            <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full border border-slate-200 text-slate-700 text-xs font-bold hover:bg-slate-50 transition-all duration-300"
-              >
-                <Github className="w-3.5 h-3.5" />
-                <span>Repository</span>
-              </a>
-
-              {project.live && (
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-violet-600 text-white text-xs font-bold hover:bg-violet-700 shadow-sm transition-all duration-300"
-                >
-                  <ExternalLink className="w-3.5 h-3.5" />
-                  <span>Live Demo</span>
-                </a>
-              )}
-            </div>
+            </SpotlightCard>
           </motion.div>
         ))}
       </div>

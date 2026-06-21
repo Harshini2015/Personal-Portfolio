@@ -3,13 +3,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { 
-  Code2, 
-  Terminal, 
-  Cpu, 
-  Layers, 
-  Fingerprint, 
-  GitBranch 
+   Code2, 
+   Terminal, 
+   Cpu, 
+   Layers, 
+   Fingerprint, 
+   GitBranch 
 } from "lucide-react";
+import { SpotlightCard } from "./ui/spotlight";
 
 export function Skills() {
   const skillCategories = [
@@ -103,9 +104,14 @@ export function Skills() {
           <motion.div
             key={idx}
             variants={cardVariants}
+            whileHover={{ 
+              y: -5,
+              scale: 1.015,
+              transition: { type: "spring", stiffness: 300, damping: 10 }
+            }}
             className={`${cat.span} text-left`}
           >
-            <div className="glass-card rounded-[2rem] p-8 h-full flex flex-col justify-between">
+            <SpotlightCard className="p-8 h-full flex flex-col justify-between border border-slate-100/80 hover:border-violet-200/50">
               <div className="space-y-6">
                 {/* Title & Icon */}
                 <div className="flex items-center gap-3">
@@ -120,16 +126,21 @@ export function Skills() {
                 {/* Skill Capsules */}
                 <div className="flex flex-wrap gap-2">
                   {cat.skills.map((skill, sIdx) => (
-                    <span
+                    <motion.span
                       key={sIdx}
-                      className="px-4 py-2 text-xs font-bold rounded-xl bg-slate-100/70 border border-slate-200/50 text-slate-700 select-none shadow-sm hover:border-violet-300 hover:text-violet-700 transition-all duration-300"
+                      whileHover={{ 
+                        scale: 1.1, 
+                        y: -2,
+                        transition: { type: "spring", stiffness: 400, damping: 10 } 
+                      }}
+                      className="px-4 py-2 text-xs font-bold rounded-xl bg-slate-100/70 border border-slate-200/50 text-slate-700 select-none shadow-sm hover:border-violet-300 hover:text-violet-700 transition-all duration-300 cursor-pointer"
                     >
                       {skill}
-                    </span>
+                    </motion.span>
                   ))}
                 </div>
               </div>
-            </div>
+            </SpotlightCard>
           </motion.div>
         ))}
       </motion.div>

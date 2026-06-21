@@ -72,7 +72,7 @@ export function Hero() {
             <Magnetic>
               <a
                 href="#projects"
-                className="flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-violet-600 text-white font-extrabold shadow-md hover:bg-violet-700 transition-all duration-300 group text-sm"
+                className="flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-violet-600 text-white font-extrabold shadow-md hover:shadow-[0_8px_25px_rgba(139,92,246,0.35)] transition-all duration-300 group text-sm glossy-btn hover:scale-105 transform active:scale-95"
               >
                 <span>View Projects</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -82,7 +82,7 @@ export function Hero() {
             <Magnetic>
               <a
                 href="#contact"
-                className="flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white border border-slate-200 text-slate-700 font-bold hover:bg-slate-50 transition-all duration-300 text-sm shadow-sm"
+                className="flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white border border-slate-200 text-slate-700 font-bold hover:bg-slate-50 transition-all duration-300 text-sm shadow-sm glossy-btn hover:scale-105 transform active:scale-95"
               >
                 <Terminal className="w-4 h-4 text-violet-500" />
                 <span>Contact Me</span>
@@ -97,19 +97,21 @@ export function Hero() {
           className="lg:col-span-5 flex justify-center relative"
         >
           {/* Dynamic Glow Field */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-violet-200/20 blur-[100px] pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-violet-200/30 blur-[100px] pointer-events-none" />
 
           {/* Clean Profile Card */}
           <motion.div
             animate={{
-              y: [0, -10, 0],
+              y: [0, -12, 0],
+              rotate: [0, 1, 0, -1, 0],
             }}
             transition={{
-              duration: 6,
+              duration: 5,
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="relative p-3 rounded-[2.5rem] bg-white border border-slate-100 shadow-[0_20px_50px_rgba(139,92,246,0.06)]"
+            whileHover={{ scale: 1.05, rotate: 0 }}
+            className="relative p-3 rounded-[2.5rem] bg-white/80 backdrop-blur-md border border-white/50 shadow-[0_20px_50px_rgba(139,92,246,0.1)] glossy-glow cursor-pointer"
           >
             <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-[2rem] overflow-hidden border border-slate-100 bg-slate-50">
               <Image
@@ -118,7 +120,7 @@ export function Hero() {
                 fill
                 priority
                 sizes="(max-width: 768px) 288px, 320px"
-                className="object-cover scale-[1.02] transition-transform duration-700 hover:scale-105"
+                className="object-cover scale-[1.02] transition-transform duration-700 hover:scale-108"
               />
             </div>
           </motion.div>

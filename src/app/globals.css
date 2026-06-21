@@ -59,29 +59,52 @@ body {
 
 /* Glassmorphism helpers */
 .glass {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.02);
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow: 
-    0 4px 20px rgba(139, 92, 246, 0.03),
-    inset 0 1px 1px rgba(255, 255, 255, 0.8);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    0 4px 24px -2px rgba(139, 92, 246, 0.02),
+    0 1px 1px rgba(255, 255, 255, 0.8) inset;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.glass-card:hover {
-  border-color: rgba(139, 92, 246, 0.25);
-  box-shadow: 
-    0 12px 30px rgba(139, 92, 246, 0.08),
-    0 0 20px rgba(139, 92, 246, 0.02),
-    inset 0 1px 1px rgba(255, 255, 255, 1);
+/* Glossy UI styling and animations */
+.glossy-glow {
+  box-shadow: 0 0 25px 2px rgba(139, 92, 246, 0.15);
+}
+
+.glossy-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.glossy-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 30%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(30deg);
+  transition: all 0.6s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.glossy-btn:hover::after {
+  left: 130%;
+  opacity: 1;
 }
 
 /* Premium Text Gradients */
@@ -126,6 +149,25 @@ body {
 .bottom-fade {
   mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+/* Animated gradient backgrounds */
+@keyframes gradient-pulse {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-bg-gradient {
+  background: linear-gradient(-45deg, rgba(139, 92, 246, 0.03), rgba(244, 63, 94, 0.02), rgba(59, 130, 246, 0.03), rgba(139, 92, 246, 0.03));
+  background-size: 400% 400%;
+  animation: gradient-pulse 15s ease infinite;
 }
 
 
