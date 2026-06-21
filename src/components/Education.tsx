@@ -20,7 +20,7 @@ export function Education() {
       period: "2021 – 2023",
       highlightType: "Performance Index",
       highlightValue: "91.83%",
-      description: "Focused curriculum in Mathematics, Physics, Chemistry, and Computer Science foundation modules.",
+      description: "Focused curriculum in Mathematics and Physics, Chemistry,Biology i.e   Science foundation modules.",
     },
     {
       degree: "Secondary School Certification (ICSE)",
