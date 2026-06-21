@@ -86,20 +86,3 @@ npm run build
 ```
 
 ---
-
-## ☁️ Vercel Deployment
-
-This repository is optimized for instant Vercel deployment:
-1. Connect your GitHub repository to [Vercel](https://vercel.com).
-2. Vercel automatically detects Next.js configurations.
-3. Every push to the `main` branch immediately triggers a clean build and deployment update.
-
----
-
-## ✉️ Coordination Details
-
-* **Email**: [harshiniis2005@gmail.com](mailto:harshiniis2005@gmail.com)
-* **LinkedIn**: [Harshini S on LinkedIn](https://linkedin.com/in/harshini-s-8400372bb)
-* **GitHub**: [Harshini2015 on GitHub](https://github.com/Harshini2015)
-* **LeetCode**: [Harshini S on LeetCode](https://leetcode.com/u/harshini1322/)
-* **Location**: Chamarajanagar, Karnataka
