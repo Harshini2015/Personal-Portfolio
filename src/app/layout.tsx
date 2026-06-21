@@ -16,16 +16,15 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Harshini S — Architectural Security & Machine Learning",
-  description: "Computer Science undergraduate specializing in cybersecurity, ML systems, and secure, high-integrity backend architectures.",
+  title: "Harshini S — Personal Portfolio",
+  description: "Computer Science Undergraduate | Cybersecurity Enthusiast | Full-Stack Developer",
   keywords: [
     "Harshini S",
     "Harshini Portfolio",
     "Cybersecurity Student",
     "Machine Learning Developer",
+    "Full-Stack Developer",
     "PES College of Engineering Mandya",
-    "Stripe inspired portfolio",
-    "Secure software development",
     "Computer Science Portfolio"
   ],
   authors: [{ name: "Harshini S" }],
@@ -35,9 +34,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://harshini-portfolio.vercel.app",
-    title: "Harshini S — Architectural Security & Machine Learning",
-    description: "Computer Science undergraduate specializing in cybersecurity, ML systems, and secure, high-integrity backend architectures.",
-    siteName: "Harshini S Personal Brand",
+    title: "Harshini S — Personal Portfolio",
+    description: "Computer Science Undergraduate | Cybersecurity Enthusiast | Full-Stack Developer",
+    siteName: "Harshini S Portfolio",
     images: [
       {
         url: "/profile.jpg",
@@ -49,8 +48,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Harshini S — Architectural Security & Machine Learning",
-    description: "Computer Science undergraduate specializing in cybersecurity, ML systems, and secure, high-integrity backend architectures.",
+    title: "Harshini S — Personal Portfolio",
+    description: "Computer Science Undergraduate | Cybersecurity Enthusiast | Full-Stack Developer",
     images: ["/profile.jpg"],
   },
   robots: {
@@ -74,7 +73,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <meta name="theme-color" content="#030303" />
+        <meta name="theme-color" content="#FAF9F6" />
       </head>
       <body
         className={`${jakarta.variable} ${playfair.variable} antialiased font-sans bg-background text-foreground`}

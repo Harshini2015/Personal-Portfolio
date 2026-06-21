@@ -61,21 +61,21 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative min-h-screen selection:bg-purple-500/20 selection:text-purple-200 bg-background text-foreground overflow-clip">
+    <main className="relative min-h-screen selection:bg-violet-100 selection:text-violet-900 bg-background text-foreground overflow-clip">
       {/* Ambient Grid Overlay & Blobs */}
-      <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none z-0" />
+      <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none z-0" />
       <BackgroundBlobs />
 
       {/* Floating Scroll Progress Indicator */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-[2px] bg-accent z-50 origin-left shadow-[0_0_10px_rgba(167,139,250,0.5)]"
+        className="fixed top-0 left-0 right-0 h-[2px] bg-accent z-50 origin-left shadow-[0_0_10px_rgba(139,92,246,0.3)]"
         style={{ scaleX }}
       />
 
       {/* Floating Centered Glass Navigation Header */}
       <header className="fixed top-6 left-0 right-0 z-40 px-4">
-        <div className="max-w-4xl mx-auto rounded-full glass border border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.4)] px-6 py-3 flex items-center justify-between">
-          <a href="#" className="text-sm font-extrabold tracking-tight text-white hover:text-accent transition-colors duration-300">
+        <div className="max-w-4xl mx-auto rounded-full glass border border-slate-100 shadow-[0_8px_32px_rgba(139,92,246,0.06)] px-6 py-3 flex items-center justify-between">
+          <a href="#" className="text-sm font-extrabold tracking-tight text-slate-900 hover:text-accent transition-colors duration-300">
             HARSHINI S.
           </a>
 
@@ -87,8 +87,8 @@ export default function Home() {
                 href={item.href}
                 className={`relative px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 ${
                   activeSection === item.href.replace("#", "")
-                    ? "text-accent bg-accent/10"
-                    : "text-slate-400 hover:text-white"
+                    ? "text-accent bg-accent/8"
+                    : "text-slate-600 hover:text-slate-900"
                 }`}
               >
                 {item.label}
@@ -101,7 +101,7 @@ export default function Home() {
             <Magnetic>
               <a
                 href="#contact"
-                className="px-5 py-2 rounded-full bg-accent text-black text-xs font-extrabold shadow-[0_4px_20px_rgba(167,139,250,0.25)] hover:bg-white hover:shadow-[0_4px_25px_rgba(255,255,255,0.3)] transition-all duration-300"
+                className="px-5 py-2 rounded-full bg-accent text-white text-xs font-extrabold shadow-[0_4px_20px_rgba(139,92,246,0.2)] hover:bg-violet-700 hover:shadow-[0_4px_25px_rgba(139,92,246,0.3)] transition-all duration-300"
               >
                 Connect
               </a>
@@ -111,7 +111,7 @@ export default function Home() {
           {/* Mobile Menu Toggle Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-1.5 text-slate-400 hover:text-white focus:outline-none"
+            className="md:hidden p-1.5 text-slate-600 hover:text-slate-900 focus:outline-none"
             aria-label="Toggle Navigation Menu"
           >
             {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -127,7 +127,7 @@ export default function Home() {
               key={idx}
               href={item.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-2xl font-bold tracking-tight text-slate-300 hover:text-accent transition-colors"
+              className="text-2xl font-bold tracking-tight text-slate-700 hover:text-accent transition-colors"
             >
               {item.label}
             </a>
@@ -135,7 +135,7 @@ export default function Home() {
           <a
             href="#contact"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="px-8 py-3.5 rounded-full bg-accent text-black font-extrabold shadow-md hover:bg-white transition-all duration-300"
+            className="px-8 py-3.5 rounded-full bg-accent text-white font-extrabold shadow-md hover:bg-violet-700 transition-all duration-300"
           >
             Connect
           </a>
@@ -153,16 +153,16 @@ export default function Home() {
       <Contact />
 
       {/* Footer */}
-      <footer className="py-16 border-t border-white/5 bg-black/40 backdrop-blur-md relative z-10 px-4">
+      <footer className="py-16 border-t border-slate-100 bg-white/40 backdrop-blur-md relative z-10 px-4">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <div className="space-y-1">
-            <p className="text-sm font-extrabold text-white tracking-wider">HARSHINI S</p>
-            <p className="text-xs text-slate-400">
-              Architectural Security & Machine Learning Systems
+            <p className="text-sm font-extrabold text-slate-900 tracking-wider">HARSHINI S</p>
+            <p className="text-xs text-slate-600">
+              Computer Science Undergraduate &amp; Cybersecurity Enthusiast
             </p>
           </div>
           <p className="text-xs text-slate-500">
-            &copy; {new Date().getFullYear()} Harshini S. Designed for peak performance and luxury aesthetic.
+            &copy; {new Date().getFullYear()} Harshini S. All rights reserved.
           </p>
         </div>
       </footer>
@@ -177,7 +177,7 @@ export default function Home() {
           <Magnetic>
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="p-3.5 rounded-full bg-card border border-white/5 shadow-lg text-slate-400 hover:text-accent hover:border-accent/20 transition-all duration-300"
+              className="p-3.5 rounded-full bg-white border border-slate-200 shadow-md text-slate-600 hover:text-accent hover:border-accent/20 transition-all duration-300"
               aria-label="Scroll to top"
             >
               <ArrowUp className="w-4 h-4" />

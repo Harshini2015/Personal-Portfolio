@@ -33,27 +33,27 @@ export function Education() {
   ];
 
   return (
-    <section id="education" className="py-36 px-6 bg-black/30 border-y border-white/5 relative z-10">
+    <section id="education" className="py-36 px-6 bg-slate-50/50 border-y border-slate-100 relative z-10">
       <div className="max-w-5xl mx-auto">
-        {/* Asymmetrical Heading */}
+        {/* Section Heading */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-24">
           <div className="space-y-4 text-left">
             <div className="flex items-center gap-4">
-              <span className="editorial-heading text-4xl text-violet-400">Chapter II</span>
-              <div className="h-[1px] w-12 bg-white/10" />
+              <span className="editorial-heading text-lg font-bold text-violet-600 uppercase tracking-widest">Education</span>
+              <div className="h-[1px] w-12 bg-violet-200" />
             </div>
-            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
               The Academic <br />
               <span className="editorial-heading text-gradient-purple">Blueprint</span>
             </h2>
           </div>
-          <p className="text-slate-400 text-sm max-w-xs text-left md:text-right font-medium">
+          <p className="text-slate-600 text-sm max-w-xs text-left md:text-right font-medium">
             Foundations laid in structured computing, data integrity, and mathematical modeling.
           </p>
         </div>
 
         {/* Asymmetrical Custom Timeline */}
-        <div className="relative border-l border-white/5 ml-4 md:ml-8 pl-8 md:pl-16 space-y-16">
+        <div className="relative border-l border-slate-200 ml-4 md:ml-8 pl-8 md:pl-16 space-y-16">
           {educationData.map((item, idx) => (
             <motion.div
               key={idx}
@@ -69,13 +69,13 @@ export function Education() {
               className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
             >
               {/* Timeline Dot (Security Node) */}
-              <div className="absolute -left-[49px] md:-left-[81px] top-2 w-8 h-8 rounded-full border border-white/10 bg-card shadow-lg flex items-center justify-center z-20">
-                <GraduationCap className="w-4 h-4 text-violet-400" />
+              <div className="absolute -left-[49px] md:-left-[81px] top-2 w-8 h-8 rounded-full border border-violet-100 bg-white shadow-md flex items-center justify-center z-20">
+                <GraduationCap className="w-4 h-4 text-violet-600" />
               </div>
 
               {/* Left timeline section (years) */}
               <div className="lg:col-span-3 pt-1 text-left">
-                <span className="text-xs font-extrabold uppercase tracking-widest text-violet-400">
+                <span className="text-xs font-extrabold uppercase tracking-widest text-violet-600">
                   {item.period}
                 </span>
               </div>
@@ -84,22 +84,22 @@ export function Education() {
               <div className="lg:col-span-9 glass-card rounded-[2rem] p-8 sm:p-10 text-left">
                 <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6 mb-6">
                   <div className="space-y-1">
-                    <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight leading-tight">
+                    <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight leading-tight">
                       {item.degree}
                     </h3>
-                    <p className="editorial-heading text-base text-violet-300">
+                    <p className="editorial-heading text-base text-violet-600">
                       {item.institution}
                     </p>
                   </div>
                   
                   {/* Score capsule */}
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-white text-xs font-bold shadow-sm w-fit">
-                    <Award className="w-4 h-4 text-violet-400" />
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-violet-50 border border-violet-100 text-slate-700 text-xs font-bold shadow-sm w-fit">
+                    <Award className="w-4 h-4 text-violet-600" />
                     <span>{item.highlightType}: {item.highlightValue}</span>
                   </div>
                 </div>
 
-                <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                   {item.description}
                 </p>
               </div>
