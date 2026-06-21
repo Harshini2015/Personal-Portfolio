@@ -1,8 +1,6 @@
-# Harshini S — Architectural Security & Machine Learning Personal Brand
+# Harshini S — Portfolio Website
 
-A luxury, production-ready personal brand and systems showcase designed for **Harshini S**. Inspired by high-end technology launch pages (such as Apple, Stripe, and Vercel), this website is built with Next.js 15, React 19, Tailwind CSS v4, Framer Motion, and Lucide React.
-
-It is structured as a storytelling product-launch experience where components flow sequentially with premium animations, depth layers, coordinate parameters, and high-performance layouts.
+A personal portfolio and project showcase website built with Next.js 15, React 19, Tailwind CSS v4, Framer Motion, and Lucide React.
 
 ---
 
