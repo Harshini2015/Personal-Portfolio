@@ -9,6 +9,7 @@ export function Projects() {
   const shouldReduceMotion = useReducedMotion();
   const projectsData = [
     {
+      num: "01",
       name: "Nexora AI – AI Career Coach & Placement Platform",
       category: "Featured AI Application",
       description: "An AI-powered career guidance and placement preparation platform designed to help students and job seekers prepare for their professional journey.",
@@ -23,9 +24,10 @@ export function Projects() {
       github: "https://github.com/Harshini2015/nexora-ai",
       live: "https://nexora-ai-cjo5.onrender.com",
       featured: true,
-      colSpan: "md:col-span-2",
+      slideDirection: "left",
     },
     {
+      num: "02",
       name: "Smart Loan & Debt Stress Analyser",
       category: "Full Stack FinTech Application",
       description: "Developed a MERN-based application for loan and debt management with intelligent forecasting structures.",
@@ -35,11 +37,11 @@ export function Projects() {
         "Debt-Free Prediction Timeline",
         "AI-Based Financial Insights"
       ],
-      techStack: ["MongoDB", "Express.js", "React.js", "Node.js", "MERN Stack"],
+      techStack: ["MongoDB", "Express.js", "React.js", "Node.js", "MERN Stack", "AI Financial Insights"],
       github: "https://github.com/Harshini2015",
-      live: null,
+      live: "https://smart-loan-debt-analyzer.vercel.app/",
       featured: false,
-      colSpan: "md:col-span-1",
+      slideDirection: "right",
     },
   ];
 
@@ -49,8 +51,8 @@ export function Projects() {
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20">
         <div className="space-y-4 text-left">
           <div className="flex items-center gap-4">
-            <span className="editorial-heading text-lg font-bold text-violet-400 uppercase tracking-widest">Projects</span>
-            <div className="h-[1px] w-12 bg-violet-500/30" />
+            <span className="editorial-heading text-lg font-bold text-violet-700 uppercase tracking-widest">Projects</span>
+            <div className="h-[1px] w-12 bg-violet-300" />
           </div>
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-zinc-100 leading-tight">
             Selected <br />
@@ -62,30 +64,38 @@ export function Projects() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
         {projectsData.map((project, idx) => (
           <motion.div
             key={idx}
-            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 60, scale: 0.98 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            initial={shouldReduceMotion ? { opacity: 0 } : { 
+              opacity: 0, 
+              x: project.slideDirection === "left" ? -60 : 60 
+            }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={shouldReduceMotion ? { duration: 0.2, delay: idx * 0.1 } : {
               type: "spring",
-              stiffness: 80,
-              damping: 18,
+              stiffness: 70,
+              damping: 16,
               delay: idx * 0.1,
             }}
             whileHover={shouldReduceMotion ? {} : { y: -8, scale: 1.008 }}
-            className={`h-full flex text-left relative ${project.colSpan} ${project.featured ? "animated-gradient-border p-[1px]" : ""}`}
+            className={`h-full flex text-left relative ${project.featured ? "animated-gradient-border p-[1px]" : ""}`}
           >
-            <SpotlightCard className={`p-8 flex flex-col justify-between h-full w-full border border-zinc-800/80 bg-zinc-900/60 hover:border-violet-500/10 hover:shadow-[0_20px_50px_rgba(139,92,246,0.08)] transition-all duration-700 rounded-[2.5rem] relative z-10`}>
+            <SpotlightCard className="p-8 sm:p-10 flex flex-col justify-between h-full w-full border border-violet-100/80 bg-white/95 hover:border-violet-300 hover:shadow-[0_20px_50px_rgba(109,40,217,0.08)] transition-all duration-700 rounded-[2.5rem] relative z-10">
               <div className="flex flex-col h-full justify-between">
                 <div>
-                  {/* Category badge */}
-                  <div className="flex items-center gap-2 mb-3">
-                    {project.featured && <Sparkles className="w-3.5 h-3.5 text-violet-400 animate-pulse" />}
-                    <span className="text-[10px] font-extrabold uppercase tracking-widest text-violet-400">
-                      {project.category}
+                  {/* Card Header & Category badge */}
+                  <div className="flex items-center justify-between gap-2 mb-4">
+                    <div className="flex items-center gap-2">
+                      {project.featured && <Sparkles className="w-4 h-4 text-violet-600 animate-pulse" />}
+                      <span className="text-[10px] font-extrabold uppercase tracking-widest text-violet-700">
+                        {project.category}
+                      </span>
+                    </div>
+                    <span className="editorial-heading text-2xl font-bold text-violet-300">
+                      {project.num}
                     </span>
                   </div>
 
@@ -95,17 +105,17 @@ export function Projects() {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-zinc-300 text-sm leading-relaxed mb-6">
+                  <p className="text-zinc-400 text-sm leading-relaxed mb-6 font-medium">
                     {project.description}
                   </p>
 
                   {/* Features bullet list */}
-                  <div className="space-y-2 mb-6">
-                    <span className="text-[10px] font-extrabold uppercase tracking-wider text-zinc-500 block">Key Modules</span>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5">
+                  <div className="space-y-2.5 mb-6">
+                    <span className="text-[10px] font-extrabold uppercase tracking-wider text-zinc-500 block">Key Highlights</span>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
                       {project.features.map((feature, fIdx) => (
-                        <div key={fIdx} className="flex items-center gap-2 text-zinc-400 text-xs">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-violet-500/70 shrink-0" />
+                        <div key={fIdx} className="flex items-center gap-2 text-zinc-300 text-xs font-semibold">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-violet-600 shrink-0" />
                           <span>{feature}</span>
                         </div>
                       ))}
@@ -119,10 +129,10 @@ export function Projects() {
                         key={tIdx}
                         whileHover={shouldReduceMotion ? {} : { 
                           scale: 1.05, 
-                          borderColor: "rgba(139, 92, 246, 0.4)", 
-                          color: "#a78bfa" 
+                          borderColor: "#6D28D9", 
+                          color: "#6D28D9" 
                         }}
-                        className="px-3 py-1 text-[10px] font-bold rounded-lg bg-zinc-950/60 text-zinc-300 border border-zinc-800/40 cursor-default select-none transition-colors duration-300"
+                        className="px-3 py-1 text-[10px] font-bold rounded-xl bg-violet-50/70 text-violet-900 border border-violet-100 cursor-default select-none transition-colors duration-300"
                       >
                         {tech}
                       </motion.span>
@@ -130,8 +140,8 @@ export function Projects() {
                   </div>
                 </div>
 
-                {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-6 border-t border-zinc-800/60">
+                {/* Action Buttons (bottom aligned) */}
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-6 border-t border-violet-100 mt-auto">
                   {project.github && (
                     <motion.a
                       href={project.github}
@@ -139,9 +149,9 @@ export function Projects() {
                       rel="noopener noreferrer"
                       whileHover={shouldReduceMotion ? {} : { scale: 1.02, y: -2 }}
                       whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
-                      className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-zinc-800 text-zinc-300 text-xs font-bold hover:bg-zinc-800 hover:border-violet-500/20 transition-all duration-300 glossy-btn shadow-sm"
+                      className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-violet-200 text-zinc-100 text-xs font-bold hover:bg-violet-50 hover:border-violet-300 transition-all duration-300 glossy-btn shadow-sm"
                     >
-                      <Github className="w-4 h-4 text-zinc-400" />
+                      <Github className="w-4 h-4 text-violet-700" />
                       <span>View GitHub</span>
                     </motion.a>
                   )}
@@ -153,7 +163,7 @@ export function Projects() {
                       rel="noopener noreferrer"
                       whileHover={shouldReduceMotion ? {} : { scale: 1.02, y: -2 }}
                       whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
-                      className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-violet-600 text-white text-xs font-bold hover:shadow-[0_4px_15px_rgba(139,92,246,0.3)] transition-all duration-300 glossy-btn"
+                      className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-violet-600 text-white text-xs font-bold hover:bg-violet-700 hover:shadow-[0_6px_20px_rgba(109,40,217,0.3)] transition-all duration-300 glossy-btn"
                     >
                       <ExternalLink className="w-4 h-4" />
                       <span>View Live Demo</span>
@@ -168,4 +178,3 @@ export function Projects() {
     </section>
   );
 }
-

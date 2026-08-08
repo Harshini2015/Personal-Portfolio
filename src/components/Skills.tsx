@@ -15,21 +15,21 @@ export function Skills() {
   const skillCategories = [
     {
       title: "Programming",
-      icon: <Code2 className="w-5 h-5 text-violet-400" />,
+      icon: <Code2 className="w-5 h-5 text-violet-700" />,
       skills: ["Java"],
       span: "lg:col-span-6",
-      direction: "left", // slide in from left
+      direction: "left",
     },
     {
       title: "Database",
-      icon: <Cpu className="w-5 h-5 text-violet-400" />,
+      icon: <Cpu className="w-5 h-5 text-violet-700" />,
       skills: ["MySQL", "MongoDB"],
       span: "lg:col-span-6",
-      direction: "bottom", // slide in from bottom
+      direction: "bottom",
     },
     {
       title: "Core Computer Science",
-      icon: <Terminal className="w-5 h-5 text-violet-400" />,
+      icon: <Terminal className="w-5 h-5 text-violet-700" />,
       skills: [
         "Data Structures", 
         "Analysis and Design of Algorithms", 
@@ -39,14 +39,14 @@ export function Skills() {
         "Object-Oriented Programming"
       ],
       span: "lg:col-span-7",
-      direction: "bottom", // slide in from bottom
+      direction: "bottom",
     },
     {
       title: "Tools",
-      icon: <GitBranch className="w-5 h-5 text-violet-400" />,
+      icon: <GitBranch className="w-5 h-5 text-violet-700" />,
       skills: ["Git", "GitHub", "Google Colab", "VS Code", "Cursor", "Antigravity", "Postman"],
       span: "lg:col-span-5",
-      direction: "right", // slide in from right
+      direction: "right",
     },
   ];
 
@@ -84,8 +84,8 @@ export function Skills() {
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-24">
         <div className="space-y-4 text-left">
           <div className="flex items-center gap-4">
-            <span className="editorial-heading text-lg font-bold text-violet-400 uppercase tracking-widest">Skills</span>
-            <div className="h-[1px] w-12 bg-violet-500/30" />
+            <span className="editorial-heading text-lg font-bold text-violet-700 uppercase tracking-widest">Skills</span>
+            <div className="h-[1px] w-12 bg-violet-300" />
           </div>
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-zinc-100 leading-tight">
             The Capability <br />
@@ -112,11 +112,10 @@ export function Skills() {
             }}
             className={`${cat.span} text-left`}
           >
-            <SpotlightCard className="p-8 h-full flex flex-col justify-between border border-zinc-800/80 bg-zinc-900/60 hover:border-violet-500/20">
+            <SpotlightCard className="p-8 h-full flex flex-col justify-between border border-violet-100/80 bg-white hover:border-violet-300 shadow-[0_8px_30px_rgba(109,40,217,0.04)]">
               <div className="space-y-6">
-                {/* Title & Icon */}
                 <div className="flex items-center gap-3">
-                  <div className="p-3 rounded-2xl bg-violet-950/30 border border-violet-900/40">
+                  <div className="p-3 rounded-2xl bg-violet-50 border border-violet-100">
                     {cat.icon}
                   </div>
                   <h3 className="text-lg font-extrabold text-zinc-100 tracking-tight">
@@ -124,7 +123,6 @@ export function Skills() {
                   </h3>
                 </div>
 
-                {/* Skill Capsules */}
                 <div className="flex flex-wrap gap-2">
                   {cat.skills.map((skill, sIdx) => (
                     <motion.span
@@ -134,7 +132,7 @@ export function Skills() {
                         y: -1.5,
                         transition: { type: "spring", stiffness: 180, damping: 22 } 
                       }}
-                      className="px-4 py-2 text-xs font-bold rounded-xl bg-zinc-950/60 border border-zinc-850 text-zinc-300 select-none shadow-sm hover:border-violet-500 hover:text-violet-400 transition-all duration-300 cursor-pointer"
+                      className="px-4 py-2 text-xs font-bold rounded-xl bg-violet-50/70 border border-violet-100 text-violet-900 select-none shadow-sm hover:border-violet-400 hover:bg-violet-100 transition-all duration-300 cursor-pointer"
                     >
                       {skill}
                     </motion.span>
@@ -148,4 +146,3 @@ export function Skills() {
     </section>
   );
 }
-

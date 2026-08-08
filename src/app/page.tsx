@@ -65,25 +65,25 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative min-h-screen selection:bg-violet-950 selection:text-violet-100 bg-background text-foreground overflow-clip animated-bg-gradient">
+    <main className="relative min-h-screen selection:bg-violet-200 selection:text-violet-900 bg-background text-foreground overflow-clip animated-bg-gradient">
       {/* Ambient Grid Overlay & Blobs */}
       <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none z-0" />
       <BackgroundBlobs />
 
       {/* Floating Scroll Progress Indicator */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-500 z-50 origin-left shadow-[0_0_10px_rgba(139,92,246,0.6)]"
+        className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-violet-600 via-purple-500 to-fuchsia-500 z-50 origin-left shadow-[0_0_10px_rgba(109,40,217,0.4)]"
         style={{ scaleX }}
       />
 
       {/* Sticky Glass Navbar Header */}
       <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 px-6 border-b ${
         isScrolled 
-          ? "bg-zinc-950/75 backdrop-blur-md border-zinc-800/50 shadow-[0_4px_30px_rgba(0,0,0,0.4)] py-4" 
+          ? "bg-white/85 backdrop-blur-md border-violet-100/80 shadow-[0_4px_25px_rgba(109,40,217,0.05)] py-4" 
           : "bg-transparent border-transparent py-6"
       }`}>
         <div className="max-w-6xl mx-auto flex items-center justify-between w-full">
-          <a href="#hero" className="text-sm font-extrabold tracking-tight text-zinc-100 hover:text-accent transition-all duration-300">
+          <a href="#hero" className="text-sm font-extrabold tracking-tight text-zinc-100 hover:text-violet-700 transition-all duration-300">
             HARSHINI S.
           </a>
 
@@ -95,14 +95,14 @@ export default function Home() {
                 href={item.href}
                 className={`relative px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 hover:scale-105 ${
                   activeSection === item.href.replace("#", "")
-                    ? "text-white font-extrabold"
+                    ? "text-violet-900 font-extrabold"
                     : "text-zinc-400 hover:text-zinc-100"
                 }`}
               >
                 {activeSection === item.href.replace("#", "") && (
                   <motion.span
                     layoutId={shouldReduceMotion ? undefined : "activeNavSection"}
-                    className="absolute inset-0 rounded-full bg-accent/15 border border-violet-500/30 shadow-[0_0_15px_rgba(139,92,246,0.2)] z-[-1]"
+                    className="absolute inset-0 rounded-full bg-violet-100/80 border border-violet-200 shadow-sm z-[-1]"
                     transition={{ type: "spring", stiffness: 140, damping: 18 }}
                   />
                 )}
@@ -116,7 +116,7 @@ export default function Home() {
             <Magnetic>
               <a
                 href="#contact"
-                className="px-5 py-2.5 rounded-full bg-accent text-white text-xs font-extrabold shadow-[0_4px_20px_rgba(139,92,246,0.3)] hover:shadow-[0_4px_25px_rgba(139,92,246,0.5)] transition-all duration-300 glossy-btn hover:scale-105 transform inline-block"
+                className="px-5 py-2.5 rounded-full bg-violet-600 text-white text-xs font-extrabold shadow-[0_4px_15px_rgba(109,40,217,0.25)] hover:bg-violet-700 transition-all duration-300 glossy-btn hover:scale-105 transform inline-block"
               >
                 Connect
               </a>
@@ -129,7 +129,7 @@ export default function Home() {
             className="md:hidden p-1.5 text-zinc-400 hover:text-zinc-100 focus:outline-none z-50 relative"
             aria-label="Toggle Navigation Menu"
           >
-            {isMobileMenuOpen ? <X className="w-5 h-5 text-white" /> : <Menu className="w-5 h-5" />}
+            {isMobileMenuOpen ? <X className="w-5 h-5 text-violet-900" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </header>
@@ -142,7 +142,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: shouldReduceMotion ? 0.1 : 0.3 }}
-            className="fixed inset-0 z-30 bg-background/98 backdrop-blur-2xl flex flex-col items-center justify-center space-y-8 md:hidden"
+            className="fixed inset-0 z-30 bg-white/98 backdrop-blur-2xl flex flex-col items-center justify-center space-y-8 md:hidden"
           >
             {navItems.map((item, idx) => (
               <a
@@ -150,7 +150,7 @@ export default function Home() {
                 href={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`text-2xl font-bold tracking-tight transition-colors duration-300 ${
-                  activeSection === item.href.replace("#", "") ? "text-accent" : "text-zinc-300 hover:text-white"
+                  activeSection === item.href.replace("#", "") ? "text-violet-700 font-extrabold" : "text-zinc-400 hover:text-zinc-100"
                 }`}
               >
                 {item.label}
@@ -159,7 +159,7 @@ export default function Home() {
             <a
               href="#contact"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="px-8 py-3.5 rounded-full bg-accent text-white font-extrabold shadow-md hover:bg-violet-750 transition-all duration-300"
+              className="px-8 py-3.5 rounded-full bg-violet-600 text-white font-extrabold shadow-md hover:bg-violet-700 transition-all duration-300"
             >
               Connect
             </a>
@@ -167,7 +167,7 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      {/* Page Sections (flowing story structure) */}
+      {/* Page Sections */}
       <Hero />
       <About />
       <Skills />
@@ -178,7 +178,7 @@ export default function Home() {
       <Contact />
 
       {/* Footer */}
-      <footer className="py-16 border-t border-zinc-800/80 bg-zinc-950/40 backdrop-blur-md relative z-10 px-4">
+      <footer className="py-16 border-t border-violet-100 bg-white/60 backdrop-blur-md relative z-10 px-4">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <div className="space-y-1">
             <p className="text-sm font-extrabold text-zinc-100 tracking-wider">HARSHINI S</p>
@@ -186,7 +186,7 @@ export default function Home() {
               Software Developer | Computer Science Undergraduate
             </p>
           </div>
-          <p className="text-xs text-zinc-500">
+          <p className="text-xs text-zinc-400">
             &copy; {new Date().getFullYear()} Harshini S. All rights reserved.
           </p>
         </div>
@@ -202,7 +202,7 @@ export default function Home() {
           <Magnetic>
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="p-3.5 rounded-full bg-zinc-900 border border-zinc-800 shadow-md text-zinc-400 hover:text-accent hover:border-accent/20 transition-all duration-300"
+              className="p-3.5 rounded-full bg-white border border-violet-200 shadow-md text-violet-700 hover:bg-violet-50 transition-all duration-300"
               aria-label="Scroll to top"
             >
               <ArrowUp className="w-4 h-4" />

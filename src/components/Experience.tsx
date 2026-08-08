@@ -44,11 +44,11 @@ export function Experience() {
   };
 
   return (
-    <section id="experience" className="py-36 px-6 bg-zinc-950/20 border-y border-zinc-900 relative z-10">
+    <section id="experience" className="py-36 px-6 bg-violet-50/30 border-y border-violet-100 relative z-10">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           
-          {/* Left Column: Title & Subtitle */}
+          {/* Left Column */}
           <motion.div
             initial={shouldReduceMotion ? { opacity: 0 } : { x: -40, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -58,8 +58,8 @@ export function Experience() {
           >
             <div className="space-y-4 text-left">
               <div className="flex items-center gap-4">
-                <span className="editorial-heading text-lg font-bold text-violet-400 uppercase tracking-widest">Experience</span>
-                <div className="h-[1px] w-12 bg-violet-500/30" />
+                <span className="editorial-heading text-lg font-bold text-violet-700 uppercase tracking-widest">Experience</span>
+                <div className="h-[1px] w-12 bg-violet-300" />
               </div>
               <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-zinc-100 leading-tight">
                 Professional <br />
@@ -72,15 +72,15 @@ export function Experience() {
             </p>
           </motion.div>
 
-          {/* Right Column: Work Card with Timeline Graphic */}
+          {/* Right Column */}
           <div className="lg:col-span-7 relative pl-8 md:pl-12 text-left">
-            {/* Progressive Timeline Line */}
+            {/* Timeline Line */}
             <motion.div
               initial={shouldReduceMotion ? { height: "100%" } : { height: 0 }}
               whileInView={{ height: "100%" }}
               viewport={{ once: true }}
               transition={shouldReduceMotion ? { duration: 0 } : { duration: 1.5, ease: "easeOut" }}
-              className="absolute left-0 top-2 bottom-2 w-[2px] bg-gradient-to-b from-violet-500 via-indigo-500 to-transparent origin-top"
+              className="absolute left-0 top-2 bottom-2 w-[2px] bg-gradient-to-b from-violet-600 via-purple-400 to-transparent origin-top"
             />
 
             {experiences.map((exp, idx) => (
@@ -95,26 +95,26 @@ export function Experience() {
                   damping: 15,
                   delay: idx * 0.1,
                 }}
-                className="glass-card rounded-[2.5rem] p-8 sm:p-12 relative overflow-hidden border border-zinc-800/80 hover:border-violet-500/10"
+                className="glass-card rounded-[2.5rem] p-8 sm:p-12 relative overflow-hidden border border-violet-100/80 hover:border-violet-300 shadow-[0_10px_35px_rgba(109,40,217,0.04)]"
               >
                 {/* Header details */}
-                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6 pb-8 border-b border-zinc-800/60 mb-8">
+                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6 pb-8 border-b border-violet-100 mb-8">
                   <div className="flex items-center gap-4">
-                    <div className="p-4 rounded-2xl bg-violet-955/40 border border-violet-900/30 text-violet-400 shrink-0">
+                    <div className="p-4 rounded-2xl bg-violet-50 border border-violet-100 text-violet-700 shrink-0">
                       <Briefcase className="w-6 h-6" />
                     </div>
                     <div className="space-y-1">
                       <h3 className="text-xl sm:text-2xl font-extrabold text-zinc-100 tracking-tight leading-tight">
                         {exp.role}
                       </h3>
-                      <p className="editorial-heading text-base text-violet-400">
+                      <p className="editorial-heading text-base text-violet-700">
                         {exp.company}
                       </p>
                     </div>
                   </div>
 
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-violet-955/30 border border-violet-900/30 text-zinc-300 text-xs font-bold w-fit">
-                    <Calendar className="w-3.5 h-3.5 text-violet-400" />
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-violet-100/70 text-violet-900 text-xs font-bold w-fit">
+                    <Calendar className="w-3.5 h-3.5 text-violet-700" />
                     <span>{exp.period}</span>
                   </div>
                 </div>
@@ -135,10 +135,10 @@ export function Experience() {
                       <motion.li 
                         key={rIdx} 
                         variants={listItem}
-                        className="flex items-start gap-4 text-zinc-300"
+                        className="flex items-start gap-4 text-zinc-400 font-medium"
                       >
                         <div className="mt-1.5 shrink-0">
-                          <Terminal className="w-4 h-4 text-violet-400" />
+                          <Terminal className="w-4 h-4 text-violet-600" />
                         </div>
                         <span className="text-sm sm:text-base leading-relaxed">
                           {resp}
@@ -156,4 +156,3 @@ export function Experience() {
     </section>
   );
 }
-

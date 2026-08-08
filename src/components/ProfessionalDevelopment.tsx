@@ -11,12 +11,12 @@ export function ProfessionalDevelopment() {
     {
       title: "Hackathons & Technical Events",
       description: "Participated in hackathons, coding competitions, and technical workshops to build experimental software and address real-time coding prompts.",
-      icon: <Award className="w-6 h-6 text-violet-400" />,
+      icon: <Award className="w-6 h-6 text-violet-700" />,
     },
     {
       title: "Collaborative Growth",
       description: "Improved teamwork, communication, and practical software engineering capabilities through intense developer sprints and workshops.",
-      icon: <Compass className="w-6 h-6 text-violet-400" />,
+      icon: <Compass className="w-6 h-6 text-violet-700" />,
     },
   ];
 
@@ -26,8 +26,8 @@ export function ProfessionalDevelopment() {
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-24">
         <div className="space-y-4 text-left">
           <div className="flex items-center gap-4">
-            <span className="editorial-heading text-lg font-bold text-violet-400 uppercase tracking-widest">Growth</span>
-            <div className="h-[1px] w-12 bg-violet-500/30" />
+            <span className="editorial-heading text-lg font-bold text-violet-700 uppercase tracking-widest">Growth</span>
+            <div className="h-[1px] w-12 bg-violet-300" />
           </div>
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-zinc-100 leading-tight">
             Professional <br />
@@ -55,21 +55,20 @@ export function ProfessionalDevelopment() {
             whileHover={shouldReduceMotion ? {} : { y: -4, scale: 1.008 }}
             className="flex h-full w-full"
           >
-            <SpotlightCard className="p-8 sm:p-10 flex flex-col justify-between w-full border border-zinc-800/80 bg-zinc-900/60 hover:border-violet-500/20 hover:shadow-[0_20px_50px_rgba(139,92,246,0.06)] transition-all duration-700 rounded-[2.5rem]">
+            <SpotlightCard className="p-8 sm:p-10 flex flex-col justify-between w-full border border-violet-100/80 bg-white hover:border-violet-300 shadow-[0_8px_30px_rgba(109,40,217,0.04)] rounded-[2.5rem]">
               <div className="flex gap-6 items-start">
-                <div className="p-4 rounded-2xl bg-violet-950/40 border border-violet-900/30 text-violet-400 shrink-0">
+                <div className="p-4 rounded-2xl bg-violet-50 border border-violet-100 text-violet-700 shrink-0">
                   {item.icon}
                 </div>
                 <div className="space-y-3">
                   <h3 className="text-xl font-extrabold text-zinc-100 tracking-tight">
                     {item.title}
                   </h3>
-                  <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-medium">
+                  <p className="text-zinc-400 text-sm sm:text-base leading-relaxed font-medium">
                     {item.description}
                   </p>
                   
-                  {/* Subtle chevron bullet representation */}
-                  <div className="flex items-center gap-1.5 text-xs text-violet-400 font-bold pt-2">
+                  <div className="flex items-center gap-1.5 text-xs text-violet-700 font-bold pt-2">
                     <span>Verified Activities</span>
                     <ChevronRight className="w-3.5 h-3.5" />
                   </div>

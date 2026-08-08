@@ -2,20 +2,56 @@
 
 import React from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { GraduationCap, Award, BookOpen } from "lucide-react";
+import { GraduationCap, Award, BookOpen, School } from "lucide-react";
 
 export function Education() {
   const shouldReduceMotion = useReducedMotion();
 
+  const educationHistory = [
+    {
+      num: "01",
+      qualification: "Bachelor of Engineering in Computer Science",
+      institution: "PES College of Engineering, Mandya",
+      period: "2023 – 2027",
+      scoreType: "Cumulative Score",
+      score: "CGPA: 8.4 / 10",
+      description: "Focused study in core computer science disciplines including Advanced Database Systems, Analysis of Algorithms, Software Engineering, Operating Systems, and Object-Oriented Software Architectures.",
+      icon: <GraduationCap className="w-6 h-6 text-violet-600" />,
+      featured: true,
+    },
+    {
+      num: "02",
+      qualification: "Excel PU College",
+      institution: "PUC — PCMB",
+      period: "June 2021 – March 2023",
+      scoreType: "Board Score",
+      score: "Percentage: 92%",
+      description: "Completed Pre-University Certificate with specialization in Physics, Chemistry, Mathematics, and Biology.",
+      icon: <BookOpen className="w-6 h-6 text-violet-600" />,
+      featured: false,
+    },
+    {
+      num: "03",
+      qualification: "St. Francis ICSE School",
+      institution: "SSLC — ICSE",
+      period: "June 2020 – March 2021",
+      scoreType: "Board Score",
+      score: "Percentage: 91%",
+      description: "Completed secondary education under the ICSE curriculum with strong foundational academic records.",
+      icon: <School className="w-6 h-6 text-violet-600" />,
+      featured: false,
+    },
+  ];
+
   return (
-    <section id="education" className="py-36 px-6 bg-zinc-950/20 border-y border-zinc-900 relative z-10">
-      <div className="max-w-4xl mx-auto">
+    <section id="education" className="py-36 px-6 bg-violet-50/30 border-y border-violet-100 relative z-10">
+      <div className="max-w-5xl mx-auto">
         {/* Section Heading */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20">
           <div className="space-y-4 text-left">
             <div className="flex items-center gap-4">
-              <span className="editorial-heading text-lg font-bold text-violet-400 uppercase tracking-widest">Education</span>
-              <div className="h-[1px] w-12 bg-violet-500/30" />
+              <span className="editorial-heading text-lg font-bold text-violet-700 uppercase tracking-widest">Education</span>
+              <div className="h-[1px] w-12 bg-violet-300" />
             </div>
             <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-zinc-100 leading-tight">
               Academic <br />
@@ -23,63 +59,81 @@ export function Education() {
             </h2>
           </div>
           <p className="text-zinc-400 text-sm max-w-xs text-left md:text-right font-medium">
-            Rigorous computing foundations, data engineering, and algorithm analysis.
+            Rigorous computing foundations, high academic consistency, and core science background.
           </p>
         </div>
 
-        {/* Premium Education Card */}
-        <motion.div
-          initial={shouldReduceMotion ? { opacity: 0 } : { x: 60, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={shouldReduceMotion ? { duration: 0.2 } : {
-            type: "spring",
-            stiffness: 60,
-            damping: 15,
-          }}
-          whileHover={shouldReduceMotion ? {} : { y: -6, scale: 1.005 }}
-          className="relative text-left"
-        >
-          <div className="glass-card rounded-[2.5rem] p-8 sm:p-12 border border-zinc-800/80 hover:border-violet-500/20 shadow-[0_20px_50px_rgba(0,0,0,0.4)] relative overflow-hidden">
-            {/* Background Accent glow */}
-            <div className="absolute -right-20 -top-20 w-64 h-64 rounded-full bg-violet-500/5 blur-[80px] pointer-events-none" />
+        {/* Education Timeline */}
+        <div className="relative pl-6 md:pl-10 space-y-10 text-left">
+          {/* Vertical Timeline Bar */}
+          <motion.div
+            initial={shouldReduceMotion ? { height: "100%" } : { height: 0 }}
+            whileInView={{ height: "100%" }}
+            viewport={{ once: true }}
+            transition={shouldReduceMotion ? { duration: 0 } : { duration: 1.2, ease: "easeOut" }}
+            className="absolute left-0 top-3 bottom-3 w-[2px] bg-gradient-to-b from-violet-600 via-purple-400 to-transparent origin-top"
+          />
 
-            <div className="flex flex-col md:flex-row gap-8 items-start justify-between relative z-10">
-              {/* Badge & Info */}
-              <div className="flex gap-6 items-start">
-                <div className="p-4 rounded-3xl bg-violet-955/40 border border-violet-900/30 text-violet-400 shrink-0">
-                  <GraduationCap className="w-8 h-8" />
-                </div>
-                <div className="space-y-3">
-                  <span className="text-[10px] font-extrabold text-violet-400 uppercase tracking-widest">
-                    PES College of Engineering, Mandya
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-zinc-100 tracking-tight leading-tight">
-                    Bachelor of Engineering in Computer Science
-                  </h3>
-                  <div className="flex flex-wrap gap-4 text-xs font-semibold text-zinc-400">
-                    <span className="flex items-center gap-1.5">
-                      <BookOpen className="w-3.5 h-3.5 text-violet-400" />
-                      Expected Graduation: 2027
-                    </span>
+          {educationHistory.map((item, idx) => (
+            <motion.div
+              key={idx}
+              initial={shouldReduceMotion ? { opacity: 0 } : { x: 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={shouldReduceMotion ? { duration: 0.2 } : {
+                type: "spring",
+                stiffness: 60,
+                damping: 15,
+                delay: idx * 0.1,
+              }}
+              whileHover={shouldReduceMotion ? {} : { y: -4, scale: 1.005 }}
+              className="relative"
+            >
+              {/* Timeline Dot Indicator */}
+              <div className="absolute -left-[31px] md:-left-[47px] top-8 w-4 h-4 rounded-full bg-white border-2 border-violet-600 shadow-[0_0_10px_rgba(109,40,217,0.3)] z-10" />
+
+              <div className={`glass-card rounded-[2.5rem] p-8 sm:p-10 border border-violet-100/80 shadow-[0_10px_35px_rgba(109,40,217,0.04)] relative overflow-hidden ${item.featured ? "bg-white ring-1 ring-violet-200" : "bg-white/90"}`}>
+                <div className="flex flex-col md:flex-row gap-6 items-start justify-between relative z-10">
+                  
+                  {/* Info Header */}
+                  <div className="flex gap-6 items-start flex-1">
+                    <div className="p-4 rounded-2xl bg-violet-50 border border-violet-100 shrink-0">
+                      {item.icon}
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-3">
+                        <span className="text-[10px] font-extrabold text-violet-700 uppercase tracking-widest">
+                          {item.num} — {item.institution}
+                        </span>
+                        <span className="px-3 py-1 rounded-full bg-violet-100/70 text-violet-800 text-[10px] font-bold">
+                          {item.period}
+                        </span>
+                      </div>
+
+                      <h3 className="text-xl sm:text-2xl font-extrabold text-zinc-100 tracking-tight leading-tight">
+                        {item.qualification}
+                      </h3>
+
+                      <p className="text-zinc-400 text-sm sm:text-base leading-relaxed pt-1">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-zinc-300 text-sm sm:text-base leading-relaxed pt-2">
-                    Focused study in core computer science disciplines including Advanced Database Systems, Analysis of Algorithms, Software Engineering, Operating Systems, and Object-Oriented Software Architectures.
-                  </p>
-                </div>
-              </div>
 
-              {/* CGPA Capsule */}
-              <div className="inline-flex items-center gap-2.5 px-5 py-3 rounded-2xl bg-violet-955/40 border border-violet-900/30 text-zinc-200 text-sm font-bold shadow-md shrink-0 self-start md:self-auto">
-                <Award className="w-5 h-5 text-violet-400" />
-                <div className="text-left leading-none">
-                  <p className="text-[9px] font-extrabold uppercase tracking-widest text-violet-400">Cumulative Score</p>
-                  <p className="text-base font-extrabold">CGPA: 8.4 / 10</p>
+                  {/* Score Pill */}
+                  <div className="inline-flex items-center gap-2.5 px-5 py-3 rounded-2xl bg-violet-600 text-white text-sm font-bold shadow-md shrink-0 self-start md:self-auto">
+                    <Award className="w-5 h-5 text-purple-200" />
+                    <div className="text-left leading-none">
+                      <p className="text-[9px] font-extrabold uppercase tracking-widest text-violet-200">{item.scoreType}</p>
+                      <p className="text-sm sm:text-base font-extrabold">{item.score}</p>
+                    </div>
+                  </div>
+
                 </div>
               </div>
-            </div>
-          </div>
-        </motion.div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

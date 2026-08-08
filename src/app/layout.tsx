@@ -75,7 +75,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <meta name="theme-color" content="#09090b" />
+        <meta name="theme-color" content="#FAF7FF" />
       </head>
       <body
         className={`${jakarta.variable} ${playfair.variable} antialiased font-sans bg-background text-foreground`}
@@ -85,4 +85,3 @@ export default function RootLayout({
     </html>
   );
 }
-
