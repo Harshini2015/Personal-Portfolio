@@ -7,7 +7,6 @@ import {
   Mail, 
   Linkedin, 
   Github, 
-  Phone, 
   ExternalLink,
   Sparkles
 } from "lucide-react";
