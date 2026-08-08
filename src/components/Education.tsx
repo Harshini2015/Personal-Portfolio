@@ -9,7 +9,6 @@ export function Education() {
 
   const educationHistory = [
     {
-      num: "01",
       qualification: "Bachelor of Engineering in Computer Science",
       institution: "PES College of Engineering, Mandya",
       period: "2023 – 2027",
@@ -20,7 +19,6 @@ export function Education() {
       featured: true,
     },
     {
-      num: "02",
       qualification: "Excel PU College",
       institution: "PUC — PCMB",
       period: "June 2021 – March 2023",
@@ -31,7 +29,6 @@ export function Education() {
       featured: false,
     },
     {
-      num: "03",
       qualification: "St. Francis ICSE School",
       institution: "SSLC — ICSE",
       period: "June 2020 – March 2021",
