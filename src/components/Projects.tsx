@@ -38,7 +38,7 @@ export function Projects() {
         "AI-Based Financial Insights"
       ],
       techStack: ["MongoDB", "Express.js", "React.js", "Node.js", "MERN Stack", "AI Financial Insights"],
-      github: "https://github.com/Harshini2015",
+      github: "https://github.com/Harshini2015/smart-loan-debt-analyzer",
       live: "https://smart-loan-debt-analyzer.vercel.app/",
       featured: false,
       slideDirection: "right",
