@@ -1,77 +1,81 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { 
    Code2, 
    Terminal, 
    Cpu, 
-   Layers, 
-   Fingerprint, 
    GitBranch 
 } from "lucide-react";
 import { SpotlightCard } from "./ui/spotlight";
 
 export function Skills() {
+  const shouldReduceMotion = useReducedMotion();
   const skillCategories = [
     {
-      title: "Core Languages",
-      icon: <Code2 className="w-5 h-5 text-violet-600" />,
-      skills: ["Java", "JavaScript (ES6+)", "TypeScript", "Python"],
-      span: "lg:col-span-4",
+      title: "Programming",
+      icon: <Code2 className="w-5 h-5 text-violet-400" />,
+      skills: ["Java"],
+      span: "lg:col-span-6",
+      direction: "left", // slide in from left
     },
     {
-      title: "Client-Side Engineering",
-      icon: <Layers className="w-5 h-5 text-violet-600" />,
-      skills: ["React.js", "Next.js", "Tailwind CSS v4", "Framer Motion", "HTML5 & CSS3"],
-      span: "lg:col-span-8",
+      title: "Database",
+      icon: <Cpu className="w-5 h-5 text-violet-400" />,
+      skills: ["MySQL", "MongoDB"],
+      span: "lg:col-span-6",
+      direction: "bottom", // slide in from bottom
     },
     {
-      title: "Backend Frameworks",
-      icon: <Terminal className="w-5 h-5 text-violet-600" />,
-      skills: ["Node.js", "Express.js", "RESTful API Design", "System Architecture"],
+      title: "Core Computer Science",
+      icon: <Terminal className="w-5 h-5 text-violet-400" />,
+      skills: [
+        "Data Structures", 
+        "Analysis and Design of Algorithms", 
+        "Database Management System", 
+        "Operating System", 
+        "Computer Networks", 
+        "Object-Oriented Programming"
+      ],
       span: "lg:col-span-7",
+      direction: "bottom", // slide in from bottom
     },
     {
-      title: "Data Services",
-      icon: <Cpu className="w-5 h-5 text-violet-600" />,
-      skills: ["Supabase", "MongoDB", "MySQL", "Relational Database Design"],
+      title: "Tools",
+      icon: <GitBranch className="w-5 h-5 text-violet-400" />,
+      skills: ["Git", "GitHub", "Google Colab", "VS Code", "Cursor", "Antigravity", "Postman"],
       span: "lg:col-span-5",
-    },
-    {
-      title: "System Principles",
-      icon: <Fingerprint className="w-5 h-5 text-violet-600" />,
-      skills: ["OWASP Threat Models", "Role-Based Auth", "Session Management", "API Audits"],
-      span: "lg:col-span-6",
-    },
-    {
-      title: "Toolchain & Workspace",
-      icon: <GitBranch className="w-5 h-5 text-violet-600" />,
-      skills: ["Git", "GitHub Actions", "Postman", "VS Code", "Cursor", "Antigravity"],
-      span: "lg:col-span-6",
+      direction: "right", // slide in from right
     },
   ];
 
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.08,
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 70,
-        damping: 15,
-      },
-    },
+  const getVariants = (direction: string, index: number) => {
+    if (shouldReduceMotion) {
+      return {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { duration: 0.2, delay: index * 0.1 } }
+      };
+    }
+    const transition = { type: "spring", stiffness: 60, damping: 15, delay: index * 0.1 };
+    switch (direction) {
+      case "left":
+        return {
+          hidden: { opacity: 0, x: -60 },
+          visible: { opacity: 1, x: 0, transition }
+        };
+      case "right":
+        return {
+          hidden: { opacity: 0, x: 60 },
+          visible: { opacity: 1, x: 0, transition }
+        };
+      case "bottom":
+      default:
+        return {
+          hidden: { opacity: 0, y: 60 },
+          visible: { opacity: 1, y: 0, transition }
+        };
+    }
   };
 
   return (
@@ -80,45 +84,42 @@ export function Skills() {
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-24">
         <div className="space-y-4 text-left">
           <div className="flex items-center gap-4">
-            <span className="editorial-heading text-lg font-bold text-violet-600 uppercase tracking-widest">Skills</span>
-            <div className="h-[1px] w-12 bg-violet-200" />
+            <span className="editorial-heading text-lg font-bold text-violet-400 uppercase tracking-widest">Skills</span>
+            <div className="h-[1px] w-12 bg-violet-500/30" />
           </div>
-          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-zinc-100 leading-tight">
             The Capability <br />
             <span className="editorial-heading text-gradient-purple">Matrix</span>
           </h2>
         </div>
-        <p className="text-slate-600 text-sm max-w-xs text-left md:text-right font-medium">
-          Delineating expertise across backend layers, defensive modeling, and client interfaces.
+        <p className="text-zinc-400 text-sm max-w-xs text-left md:text-right font-medium">
+          Delineating specialized technical expertise and core CS competencies.
         </p>
       </div>
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        className="grid grid-cols-1 lg:grid-cols-12 gap-6"
-      >
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {skillCategories.map((cat, idx) => (
           <motion.div
             key={idx}
-            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={getVariants(cat.direction, idx)}
             whileHover={{ 
-              y: -3,
+              y: -4,
               scale: 1.008,
               transition: { type: "spring", stiffness: 120, damping: 25 }
             }}
             className={`${cat.span} text-left`}
           >
-            <SpotlightCard className="p-8 h-full flex flex-col justify-between border border-slate-200/50 hover:border-violet-200/40">
+            <SpotlightCard className="p-8 h-full flex flex-col justify-between border border-zinc-800/80 bg-zinc-900/60 hover:border-violet-500/20">
               <div className="space-y-6">
                 {/* Title & Icon */}
                 <div className="flex items-center gap-3">
-                  <div className="p-3 rounded-2xl bg-violet-50 border border-violet-100">
+                  <div className="p-3 rounded-2xl bg-violet-950/30 border border-violet-900/40">
                     {cat.icon}
                   </div>
-                  <h3 className="text-lg font-extrabold text-slate-900 tracking-tight">
+                  <h3 className="text-lg font-extrabold text-zinc-100 tracking-tight">
                     {cat.title}
                   </h3>
                 </div>
@@ -133,7 +134,7 @@ export function Skills() {
                         y: -1.5,
                         transition: { type: "spring", stiffness: 180, damping: 22 } 
                       }}
-                      className="px-4 py-2 text-xs font-bold rounded-xl bg-slate-100/70 border border-slate-200/50 text-slate-700 select-none shadow-sm hover:border-violet-300 hover:text-violet-700 transition-all duration-300 cursor-pointer"
+                      className="px-4 py-2 text-xs font-bold rounded-xl bg-zinc-950/60 border border-zinc-850 text-zinc-300 select-none shadow-sm hover:border-violet-500 hover:text-violet-400 transition-all duration-300 cursor-pointer"
                     >
                       {skill}
                     </motion.span>
@@ -143,7 +144,7 @@ export function Skills() {
             </SpotlightCard>
           </motion.div>
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 }

@@ -16,26 +16,28 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Harshini S — Personal Portfolio",
-  description: "Computer Science Undergraduate | Cybersecurity Enthusiast | Full-Stack Developer",
+  title: "Harshini S | Software Developer & Computer Science Undergraduate",
+  description: "Software Developer and Computer Science Undergraduate building practical software solutions with Java, SQL, MERN Stack, and AI.",
   keywords: [
     "Harshini S",
-    "Harshini Portfolio",
-    "Cybersecurity Student",
-    "Machine Learning Developer",
-    "Full-Stack Developer",
+    "Software Developer",
+    "Computer Science Undergraduate",
+    "Java Developer",
+    "SQL",
+    "MERN Stack",
+    "AI Developer",
+    "Cybersecurity Analyst Intern",
     "PES College of Engineering Mandya",
-    "Computer Science Portfolio"
   ],
   authors: [{ name: "Harshini S" }],
   creator: "Harshini S",
-  metadataBase: new URL("https://harshini-portfolio.vercel.app"),
+  metadataBase: new URL("https://personal-portfolio-kappa-dusky.vercel.app"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://harshini-portfolio.vercel.app",
-    title: "Harshini S — Personal Portfolio",
-    description: "Computer Science Undergraduate | Cybersecurity Enthusiast | Full-Stack Developer",
+    url: "https://personal-portfolio-kappa-dusky.vercel.app",
+    title: "Harshini S | Software Developer & Computer Science Undergraduate",
+    description: "Software Developer and Computer Science Undergraduate building practical software solutions with Java, SQL, MERN Stack, and AI.",
     siteName: "Harshini S Portfolio",
     images: [
       {
@@ -48,8 +50,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Harshini S — Personal Portfolio",
-    description: "Computer Science Undergraduate | Cybersecurity Enthusiast | Full-Stack Developer",
+    title: "Harshini S | Software Developer & Computer Science Undergraduate",
+    description: "Software Developer and Computer Science Undergraduate building practical software solutions with Java, SQL, MERN Stack, and AI.",
     images: ["/profile.jpg"],
   },
   robots: {
@@ -73,7 +75,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <meta name="theme-color" content="#FAF9F6" />
+        <meta name="theme-color" content="#09090b" />
       </head>
       <body
         className={`${jakarta.variable} ${playfair.variable} antialiased font-sans bg-background text-foreground`}
