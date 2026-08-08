@@ -38,13 +38,6 @@ export function Contact() {
       icon: <Mail className="w-6 h-6 text-violet-600" />,
       actionText: "Send Mail",
     },
-    {
-      name: "Phone",
-      identifier: "+91 9632144205",
-      url: "tel:+919632144205",
-      icon: <Phone className="w-6 h-6 text-violet-600" />,
-      actionText: "Call Direct",
-    },
   ];
 
   return (
