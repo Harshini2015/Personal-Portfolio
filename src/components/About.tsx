@@ -7,23 +7,23 @@ import { Layers, Brain, Cpu } from "lucide-react";
 export function About() {
   const shouldReduceMotion = useReducedMotion();
   const cardData = [
-   {
+{
   num: "01",
   icon: <Cpu className="w-6 h-6 text-violet-700" />,
-  title: "Computer Science & Software Engineering",
-  description: "Strong foundation in Data Structures and Algorithms, Object-Oriented Programming, Operating Systems, Computer Networks, Database Management, and software engineering principles.",
+  title: "Core Computer Science & Java",
+  description: "Solid understanding of core Computer Science concepts with hands-on experience in Java, Object-Oriented Programming, problem solving, and fundamental data structures.",
 },
 {
   num: "02",
   icon: <Layers className="w-6 h-6 text-violet-700" />,
   title: "Full-Stack Web Development",
-  description: "Building end-to-end web applications using React.js, Node.js, Express.js, MongoDB, MySQL, REST APIs, JWT authentication, and responsive frontend technologies.",
+  description: "Building full-stack applications using React.js, Node.js, Express.js, MongoDB, MySQL, REST APIs, JWT authentication, and Java-based backend technologies.",
 },
 {
   num: "03",
   icon: <Brain className="w-6 h-6 text-violet-700" />,
-  title: "AI & Generative AI Integration",
-  description: "Integrating LLM-powered capabilities into full-stack applications using Groq APIs and Llama models to build intelligent assistants, financial analysis tools, and automated user workflows.",
+  title: "AI & Generative AI",
+  description: "Integrating AI capabilities into applications using Groq APIs and Llama models to develop intelligent features for financial analysis, user assistance, and workflow automation.",
 },];
 
   return (
