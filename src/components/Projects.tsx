@@ -9,41 +9,68 @@ export function Projects() {
   const shouldReduceMotion = useReducedMotion();
   const projectsData = [
     {
-      num: "01",
-      name: "Nexora AI – AI Career Coach & Placement Platform",
-      category: "Featured AI Application",
-      description: "An AI-powered career guidance and placement preparation platform designed to help students and job seekers prepare for their professional journey.",
-      features: [
-        "AI Career Coach & Guidance",
-        "Resume Analyzer (PDF)",
-        "Interview Simulator",
-        "Career Planner & Roadmap",
-        "Interactive Dashboards & Analytics"
-      ],
-      techStack: ["Python", "Gradio", "Groq SDK", "Llama 3.1", "Supabase", "PyPDF", "Pandas", "Plotly"],
-      github: "https://github.com/Harshini2015/nexora-ai",
-      live: "https://nexora-ai-cjo5.onrender.com",
-      featured: true,
-      slideDirection: "left",
-    },
-    {
-      num: "02",
-      name: "Smart Loan & Debt Stress Analyser",
-      category: "Full Stack FinTech Application",
-      description: "Developed a MERN-based application for loan and debt management with intelligent forecasting structures.",
-      features: [
-        "Debt Health Score Dashboard",
-        "Interactive EMI Simulation",
-        "Debt-Free Prediction Timeline",
-        "AI-Based Financial Insights"
-      ],
-      techStack: ["MongoDB", "Express.js", "React.js", "Node.js", "MERN Stack", "AI Financial Insights"],
-      github: "https://github.com/Harshini2015/smart-loan-debt-analyzer",
-      live: "https://smart-loan-debt-analyzer.vercel.app/",
-      featured: false,
-      slideDirection: "right",
-    },
-  ];
+  num: "01",
+  name: "HelpDesk Ticket Management System",
+  category: "Featured Full-Stack Application",
+  description: "A corporate-grade IT HelpDesk platform built to streamline employee support requests, ticket management, and resolution workflows with role-based access and database-driven dashboards.",
+  features: [
+    "Role-Based Authentication & Dashboards",
+    "Employee Ticket Creation & Tracking",
+    "Support Agent Ticket Management",
+    "Admin Dashboard & System Metrics",
+    "Ticket History & Audit Trails",
+    "Search, Filtering & Priority Management"
+  ],
+  techStack: [
+    "Java",
+    "Jakarta Servlets",
+    "JDBC",
+    "MySQL",
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "JSP",
+    "Maven",
+    "Apache Tomcat",
+    "Docker"
+  ],
+  github: "https://github.com/Harshini2015/HelpDesk-Ticket-Management-System",
+  featured: true,
+  slideDirection: "left",
+},
+   ```javascript
+{
+  num: "02",
+  name: "Smart Loan & Debt Stress Analyzer",
+  category: "Featured AI-Powered Full-Stack Application",
+  description: "An AI-powered financial wellness platform built with the MERN stack to help users manage loans, analyze debt stress, plan emergency funds, track financial goals, and make smarter financial decisions.",
+  features: [
+    "AI Financial Assistant with Groq & Llama 3.3",
+    "Loan Management & EMI Simulation",
+    "Debt-to-Income Stress Analysis",
+    "Emergency Fund Planner",
+    "Financial Goals & Expense Tracking",
+    "Financial Health Score & Analytics"
+  ],
+  techStack: [
+    "React",
+    "Vite",
+    "Tailwind CSS",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Mongoose",
+    "JWT",
+    "Groq API",
+    "Llama 3.3"
+  ],
+  github: "https://github.com/Harshini2015/smart-loan-debt-analyzer",
+  live: "https://smart-loan-debt-analyzer.vercel.app/",
+  featured: true,
+  slideDirection: "right",
+},
+];
+
 
   return (
     <section id="projects" className="py-36 px-6 max-w-6xl mx-auto relative z-10">
