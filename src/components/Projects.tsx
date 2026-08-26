@@ -9,68 +9,66 @@ export function Projects() {
   const shouldReduceMotion = useReducedMotion();
   const projectsData = [
     {
-  num: "01",
-  name: "HelpDesk Ticket Management System",
-  category: "Featured Full-Stack Application",
-  description: "A corporate-grade IT HelpDesk platform built to streamline employee support requests, ticket management, and resolution workflows with role-based access and database-driven dashboards.",
-  features: [
-    "Role-Based Authentication & Dashboards",
-    "Employee Ticket Creation & Tracking",
-    "Support Agent Ticket Management",
-    "Admin Dashboard & System Metrics",
-    "Ticket History & Audit Trails",
-    "Search, Filtering & Priority Management"
-  ],
-  techStack: [
-    "Java",
-    "Jakarta Servlets",
-    "JDBC",
-    "MySQL",
-    "HTML5",
-    "CSS3",
-    "JavaScript",
-    "JSP",
-    "Maven",
-    "Apache Tomcat",
-    "Docker"
-  ],
-  github: "https://github.com/Harshini2015/HelpDesk-Ticket-Management-System",
-  featured: true,
-  slideDirection: "left",
-},
-   ```javascript
-{
-  num: "02",
-  name: "Smart Loan & Debt Stress Analyzer",
-  category: "Featured AI-Powered Full-Stack Application",
-  description: "An AI-powered financial wellness platform built with the MERN stack to help users manage loans, analyze debt stress, plan emergency funds, track financial goals, and make smarter financial decisions.",
-  features: [
-    "AI Financial Assistant with Groq & Llama 3.3",
-    "Loan Management & EMI Simulation",
-    "Debt-to-Income Stress Analysis",
-    "Emergency Fund Planner",
-    "Financial Goals & Expense Tracking",
-    "Financial Health Score & Analytics"
-  ],
-  techStack: [
-    "React",
-    "Vite",
-    "Tailwind CSS",
-    "Node.js",
-    "Express.js",
-    "MongoDB",
-    "Mongoose",
-    "JWT",
-    "Groq API",
-    "Llama 3.3"
-  ],
-  github: "https://github.com/Harshini2015/smart-loan-debt-analyzer",
-  live: "https://smart-loan-debt-analyzer.vercel.app/",
-  featured: true,
-  slideDirection: "right",
-},
-];
-
+      num: "01",
+      name: "HelpDesk Ticket Management System",
+      category: "Featured Full-Stack Application",
+      description: "A corporate-grade IT HelpDesk platform built to streamline employee support requests, ticket management, and resolution workflows with role-based access and database-driven dashboards.",
+      features: [
+        "Role-Based Authentication & Dashboards",
+        "Employee Ticket Creation & Tracking",
+        "Support Agent Ticket Management",
+        "Admin Dashboard & System Metrics",
+        "Ticket History & Audit Trails",
+        "Search, Filtering & Priority Management"
+      ],
+      techStack: [
+        "Java",
+        "Jakarta Servlets",
+        "JDBC",
+        "MySQL",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "JSP",
+        "Maven",
+        "Apache Tomcat",
+        "Docker"
+      ],
+      github: "https://github.com/Harshini2015/HelpDesk-Ticket-Management-System",
+      featured: true,
+      slideDirection: "left",
+    },
+    {
+      num: "02",
+      name: "Smart Loan & Debt Stress Analyzer",
+      category: "Featured AI-Powered Full-Stack Application",
+      description: "An AI-powered financial wellness platform built with the MERN stack to help users manage loans, analyze debt stress, plan emergency funds, track financial goals, and make smarter financial decisions.",
+      features: [
+        "AI Financial Assistant with Groq & Llama 3.3",
+        "Loan Management & EMI Simulation",
+        "Debt-to-Income Stress Analysis",
+        "Emergency Fund Planner",
+        "Financial Goals & Expense Tracking",
+        "Financial Health Score & Analytics"
+      ],
+      techStack: [
+        "React",
+        "Vite",
+        "Tailwind CSS",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Mongoose",
+        "JWT",
+        "Groq API",
+        "Llama 3.3"
+      ],
+      github: "https://github.com/Harshini2015/smart-loan-debt-analyzer",
+      live: "https://smart-loan-debt-analyzer.vercel.app/",
+      featured: true,
+      slideDirection: "right",
+    },
+  ];
 
   return (
     <section id="projects" className="py-36 px-6 max-w-6xl mx-auto relative z-10">
@@ -110,7 +108,7 @@ export function Projects() {
             whileHover={shouldReduceMotion ? {} : { y: -8, scale: 1.008 }}
             className={`h-full flex text-left relative ${project.featured ? "animated-gradient-border p-[1px]" : ""}`}
           >
-            <SpotlightCard className="p-8 sm:p-10 flex flex-col justify-between h-full w-full border border-violet-100/80 bg-white/95 hover:border-violet-300 hover:shadow-[0_20px_50px_rgba(109,40,217,0.08)] transition-all duration-700 rounded-[2.5rem] relative z-10">
+            <SpotlightCard className="p-8 sm:p-10 flex flex-col justify-between h-full w-full border border-violet-100/80 bg-white/95 hover:border-violet-300 hover:shadow-[0_20px_50px_rgba(109,40,217,0.15)]">
               <div className="flex flex-col h-full justify-between">
                 <div>
                   {/* Card Header & Category badge */}
@@ -176,7 +174,7 @@ export function Projects() {
                       rel="noopener noreferrer"
                       whileHover={shouldReduceMotion ? {} : { scale: 1.02, y: -2 }}
                       whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
-                      className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-violet-200 text-zinc-100 text-xs font-bold hover:bg-violet-50 hover:border-violet-300 transition-all duration-300 glossy-btn shadow-sm"
+                      className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-violet-200 text-zinc-100 text-xs font-bold hover:bg-violet-50 hover:border-violet-400 transition-all duration-300"
                     >
                       <Github className="w-4 h-4 text-violet-700" />
                       <span>View GitHub</span>
@@ -190,7 +188,7 @@ export function Projects() {
                       rel="noopener noreferrer"
                       whileHover={shouldReduceMotion ? {} : { scale: 1.02, y: -2 }}
                       whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
-                      className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-violet-600 text-white text-xs font-bold hover:bg-violet-700 hover:shadow-[0_6px_20px_rgba(109,40,217,0.3)] transition-all duration-300 glossy-btn"
+                      className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-violet-600 text-white text-xs font-bold hover:bg-violet-700 hover:shadow-[0_6px_20px_rgba(109,40,217,0.4)] transition-all duration-300"
                     >
                       <ExternalLink className="w-4 h-4" />
                       <span>View Live Demo</span>
