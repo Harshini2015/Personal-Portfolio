@@ -7,24 +7,25 @@ import { Layers, Brain, Cpu } from "lucide-react";
 export function About() {
   const shouldReduceMotion = useReducedMotion();
   const cardData = [
-{
-  num: "01",
-  icon: <Cpu className="w-6 h-6 text-violet-700" />,
-  title: "Core Computer Science & Java",
-  description: "Solid understanding of core Computer Science concepts with hands-on experience in Java, Object-Oriented Programming, problem solving, and fundamental data structures.",
-},
-{
-  num: "02",
-  icon: <Layers className="w-6 h-6 text-violet-700" />,
-  title: "Full-Stack Web Development",
-  description: "Building full-stack applications using React.js, Node.js, Express.js, MongoDB, MySQL, REST APIs, JWT authentication, and Java-based backend technologies.",
-},
-{
-  num: "03",
-  icon: <Brain className="w-6 h-6 text-violet-700" />,
-  title: "AI & Generative AI",
-  description: "Integrating AI capabilities into applications using Groq APIs and Llama models to develop intelligent features for financial analysis, user assistance, and workflow automation.",
-},];
+    {
+      num: "01",
+      icon: <Cpu className="w-6 h-6 text-violet-700" />,
+      title: "Computer Science & Software Engineering",
+      description: "Strong foundation in Data Structures and Algorithms, Object-Oriented Programming, Operating Systems, Computer Networks, Database Management, and software engineering principles.",
+    },
+    {
+      num: "02",
+      icon: <Layers className="w-6 h-6 text-violet-700" />,
+      title: "Full-Stack Web Development",
+      description: "Building end-to-end web applications using React.js, Node.js, Express.js, MongoDB, MySQL, REST APIs, JWT authentication, and responsive frontend technologies.",
+    },
+    {
+      num: "03",
+      icon: <Brain className="w-6 h-6 text-violet-700" />,
+      title: "AI & Generative AI Integration",
+      description: "Integrating LLM-powered capabilities into full-stack applications using Groq APIs and Llama models to build intelligent assistants, financial analysis tools, and automated user workflows.",
+    },
+  ];
 
   return (
     <section id="about" className="py-36 px-6 max-w-6xl mx-auto relative z-10">
@@ -50,7 +51,7 @@ export function About() {
           
           <div className="space-y-6 text-zinc-400 text-sm sm:text-base leading-relaxed font-medium">
             <p>
-              I am a Computer Science undergraduate at PES College of Engineering, Mandya. My engineering focus is on creating reliable web applications, analyzing algorithms, and integrating artificial intelligence to solve practical problems.
+              I am a Computer Science undergraduate at PES College of Engineering, Mandya. My engineering focus is on creating reliable web applications, analyzing algorithms, and integrating artificial intelligence into full-stack solutions.
             </p>
             <p className="text-zinc-500 font-normal">
               By combining robust backend schemas (SQL, MongoDB) with clean OOP design principles and automated LLM flows, I aim to develop highly optimized and secure software.
