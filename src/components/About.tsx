@@ -10,20 +10,20 @@ export function About() {
     {
       num: "01",
       icon: <Cpu className="w-6 h-6 text-violet-700" />,
-      title: "Computer Science & Software Engineering",
-      description: "Strong foundation in Data Structures and Algorithms, Object-Oriented Programming, Operating Systems, Computer Networks, Database Management, and software engineering principles.",
+      title: "Core Computer Science & Java Programming",
+      description: "Strong foundation in core computer science concepts including Data Structures, Algorithms, Operating Systems, Computer Networks, Database fundamentals, and Object-Oriented Programming, with practical programming experience in Java.",
     },
     {
       num: "02",
       icon: <Layers className="w-6 h-6 text-violet-700" />,
-      title: "Full-Stack Web Development",
-      description: "Building end-to-end web applications using React.js, Node.js, Express.js, MongoDB, MySQL, REST APIs, JWT authentication, and responsive frontend technologies.",
+      title: "Full-Stack MERN Development",
+      description: "Building responsive web applications using MongoDB, Express.js, React.js, and Node.js, with experience developing REST APIs, database models, authentication, and frontend-backend integration.",
     },
     {
       num: "03",
       icon: <Brain className="w-6 h-6 text-violet-700" />,
-      title: "AI & Generative AI Integration",
-      description: "Integrating LLM-powered capabilities into full-stack applications using Groq APIs and Llama models to build intelligent assistants, financial analysis tools, and automated user workflows.",
+      title: "AI Integration & Intelligent Applications",
+      description: "Integrating AI capabilities into applications using Python and modern AI APIs/models, with a focus on building practical intelligent features, automation, and user-focused workflows.",
     },
   ];
 
