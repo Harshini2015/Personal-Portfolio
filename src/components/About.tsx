@@ -7,26 +7,24 @@ import { Layers, Brain, Cpu } from "lucide-react";
 export function About() {
   const shouldReduceMotion = useReducedMotion();
   const cardData = [
-    {
-      num: "01",
-      icon: <Cpu className="w-6 h-6 text-violet-700" />,
-      title: "Core Computer Science & Java Programming",
-      description: "Strong foundation in core computer science concepts including Data Structures, Algorithms, Operating Systems, Computer Networks, Database fundamentals, and Object-Oriented Programming, with practical programming experience in Java.",
-    },
-    {
-      num: "02",
-      icon: <Layers className="w-6 h-6 text-violet-700" />,
-      title: "Full-Stack MERN Development",
-      description: "Building responsive web applications using MongoDB, Express.js, React.js, and Node.js, with experience developing REST APIs, database models, authentication, and frontend-backend integration.",
-    },
-    {
-      num: "03",
-      icon: <Brain className="w-6 h-6 text-violet-700" />,
-      title: "AI Integration & Intelligent Applications",
-      description: "Integrating AI capabilities into applications using Python and modern AI APIs/models, with a focus on building practical intelligent features, automation, and user-focused workflows.",
-    },
-  ];
-
+ {
+  num: "01",
+  icon: <Cpu className="w-6 h-6 text-violet-700" />,
+  title: "Core Computer Science & Java",
+  description: "Solid understanding of core Computer Science concepts with hands-on experience in Java, Object-Oriented Programming, problem solving, and fundamental data structures.",
+},
+{
+  num: "02",
+  icon: <Layers className="w-6 h-6 text-violet-700" />,
+  title: "Full-Stack Web Development",
+  description: "Building full-stack applications using React.js, Node.js, Express.js, MongoDB, MySQL, REST APIs, JWT authentication, and Java-based backend technologies.",
+},
+{
+  num: "03",
+  icon: <Brain className="w-6 h-6 text-violet-700" />,
+  title: "AI & Generative AI",
+  description: "Integrating AI capabilities into applications using Groq APIs and Llama models to develop intelligent features for financial analysis, user assistance, and workflow automation.",
+},];
   return (
     <section id="about" className="py-36 px-6 max-w-6xl mx-auto relative z-10">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
