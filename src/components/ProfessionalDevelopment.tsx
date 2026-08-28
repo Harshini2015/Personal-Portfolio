@@ -69,7 +69,7 @@ export function ProfessionalDevelopment() {
                   </p>
                   
                   <div className="flex items-center gap-1.5 text-xs text-violet-700 font-bold pt-2">
-                    <span>Verified Activities</span>
+                    
                     <ChevronRight className="w-3.5 h-3.5" />
                   </div>
                 </div>
